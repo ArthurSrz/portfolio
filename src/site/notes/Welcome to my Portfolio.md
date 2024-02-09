@@ -15,7 +15,7 @@ This is a two-entry portfolio. If you only have a few minutes to navigate throug
 
 
 
-## In-depth navigation 
+## In-depth navigation 👇
 
 [[How to navigate this portfolio ?\|How to navigate this portfolio ?]]
 
