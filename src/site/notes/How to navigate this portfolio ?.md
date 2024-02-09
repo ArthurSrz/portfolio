@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/how-to-navigate-this-portfolio/","tags":["gardenEntry"]}
+{"dg-publish":true,"permalink":"/how-to-navigate-this-portfolio/"}
 ---
 
 This portfolio is structured as a network graph. 
