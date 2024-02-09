@@ -5,8 +5,10 @@
 # Check the content of my Human-Data Interactions course 👇
 
 
-```gate
-url: https://arthursrz.github.io/Introduction-aux-Interactions-Homme-Donn-es/#/
-height: 500
-```
+<iframe src="https://arthursrz.github.io/Introduction-aux-Interactions-Homme-Donn-es/#/" width="700" height="400"></iframe>
+
+
+
+
+
 
