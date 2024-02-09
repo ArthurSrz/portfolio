@@ -4,7 +4,7 @@
 
 # Welcome to my Data Product Portfolio 👋
 
-It was designed to be the shop window of all the data products and prototypes I have been designing since I started my PhD about the usage of open data back. (PhD I defended in [2021](https://theses.fr/2021GRALG007)) 
+It was designed to be the shop window of all the data products and prototypes I have been designing since I started my PhD about the usage of open data back (and defended in [2021](https://theses.fr/2021GRALG007)) 
 
 This is a two-entry portfolio : 
 * quick navigation of you only have a few minutes to check the products and prototypes 
