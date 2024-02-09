@@ -6,7 +6,9 @@
 
 It was designed to be the shop window of all the data products and prototypes I have been designing since I started my PhD about the usage of open data back in 2017.
 
-This is a two-entry portfolio. If you only have a few minutes to navigate through the portfolio 
+This is a two-entry portfolio : 
+* quick navigation of you only have a few minutes to check the products and prototypes 
+* a more in-depth navigation if you have more time 😉
 
 ## Quick navigation 
 
