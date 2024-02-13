@@ -14,7 +14,7 @@ In such a context, the Open Data Canvas was designed to remove the barriers hind
 
 <div class="container">  
   <div class="center">  
-    <button onclick="window.open('https://theses.hal.science/tel-03496226v1/document', '_blank');">Here</button>  
+    <button style="color: #778ee7;" onclick="window.open('https://theses.hal.science/tel-03496226v1/document', '_blank');">Here</button>  
   </div>  
 </div>
 
