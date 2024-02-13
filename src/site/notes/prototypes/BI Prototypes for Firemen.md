@@ -6,5 +6,6 @@
 
 # Extract of the documentation associated with the prototypes 
 
+![sdis38.png](/img/user/media/sdis38.png)
 
-![sdis38.png](/img/user/sdis38.png)
+
