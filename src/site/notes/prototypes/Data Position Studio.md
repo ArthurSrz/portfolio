@@ -13,11 +13,6 @@ As a result, one data position is usually made of :
 * responses with associated "scores" to measure skills level 
 * some reasoning to allocate profiles in a balanced manner
 
-> [!question] What are the concepts to understand ? 
-> Skill-related questions 
-> Hash-table, index table to allocate scores to each response to the questions
-> Algorithm (round robin)
-
 #### What general concepts behind the Data Position ?
 
 A data position is simply two interrelated things :
@@ -31,6 +26,12 @@ Interrelated because the dispenser will use some *dispensing function* based on 
 > In every group I want 2 blue, 1 red and 3 yellows
 
 Each bubble (representing a person) will be colorized accordingly to some established rules as well. 
+
+
+> [!question] What are the concepts to understand ? 
+> Skill-related questions 
+> Hash-table, index table to allocate scores to each response to the questions
+> Algorithm (round robin)
 
 # Demo instance of the Data Position Studio
 
