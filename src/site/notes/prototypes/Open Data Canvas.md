@@ -10,7 +10,15 @@ Behind this Law lies the promise of new applications, services and information, 
 
 In such a context, the Open Data Canvas was designed to remove the barriers hindering the development of new uses.
 
-<iframe src="https://hal.science/tel-03496226v1" width="400" height="300" frameBorder="1"></iframe>
+Download the rest of the design rationale (Ph.D. Dissertation) 👇
+
+<div class="container">  
+  <div class="center">  
+    <button onclick="window.open('https://theses.hal.science/tel-03496226v1/document', '_blank');">Here</button>  
+  </div>  
+</div>
+
+
 
 # Navigate through the Open Data Canvas (french only)
 
