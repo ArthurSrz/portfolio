@@ -6,5 +6,6 @@
 
 # Demo instance of the Data Position Studio
 
+
 <head> <title>Title of the document</title> </head> <body> <button onclick="window.location.href='https://forgedatapositionfinal.streamlit.app/';"> Here </button> </body>
 
