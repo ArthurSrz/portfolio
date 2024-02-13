@@ -17,6 +17,8 @@ In such a context, the Open Data Canvas was designed to remove the barriers hind
     <button onclick="window.open('https://theses.hal.science/tel-03496226v1/document', '_blank');">Here</button>  
   </div>  
 </div>
+
+
 # Navigate through the Open Data Canvas (french only)
 
 
