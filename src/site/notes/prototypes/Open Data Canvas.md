@@ -10,7 +10,7 @@ Behind this Law lies the promise of new applications, services and information, 
 
 In such a context, the Open Data Canvas was designed to remove the barriers hindering the development of new uses.
 
-Download the rest of the design rationale (Ph.D. Dissertation) 👇
+**Download the rest of the design rationale (Ph.D. Dissertation) 👇**
 
 <div class="container">  
   <div class="center">  
