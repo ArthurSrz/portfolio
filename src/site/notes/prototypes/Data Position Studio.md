@@ -10,6 +10,11 @@
 
 <button onclick="window.open('https://forgedatapositionfinal.streamlit.app/', '_blank');">Here</button> 
 
+<div class="container">  
+  <div class="center">  
+    <button>Centered Button</button>  
+  </div>  
+</div>
 
 
 
