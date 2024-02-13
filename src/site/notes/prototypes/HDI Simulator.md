@@ -2,16 +2,13 @@
 {"dg-publish":true,"permalink":"/prototypes/hdi-simulator/","tags":["prototype"]}
 ---
 
-![image_hdi_simulator.png|460x250](/img/user/media/image_hdi_simulator.png)
-
+# Design rationale
 
 # Get access to the prototype
 
-```button
-name Contact me
-type link
-action https://www.linkedin.com/in/arthursarazin/
-color blue
-```
+<html> <head> <title>Title of the document</title> </head> <body> <button onclick="window.location.href='https://www.linkedin.com/in/arthursarazin/?locale=en_US';"> Contact me </button> </body> </html>
+
+
+
 
 
