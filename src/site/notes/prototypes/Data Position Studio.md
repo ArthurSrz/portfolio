@@ -8,7 +8,7 @@
 
 ![Screenshot 2024-02-13 at 16.19.14.png|left|300](/img/user/Screenshot%202024-02-13%20at%2016.19.14.png)
 
-------------------------------------------- <button onclick="window.open('https://forgedatapositionfinal.streamlit.app/', '_blank');">Here</button> ---------------------------------------------
+<button onclick="window.open('https://forgedatapositionfinal.streamlit.app/', '_blank');">Here</button> 
 
 
 
