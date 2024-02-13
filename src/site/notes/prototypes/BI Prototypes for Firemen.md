@@ -4,7 +4,7 @@
 
 # Design rationale
 
-# One interface
+# Extract of the documentation associated with the prototypes 
 
 
 ![sdis38.png](/img/user/sdis38.png)
