@@ -42,7 +42,7 @@ Each bubble (representing a person) will be colorized accordingly to some establ
 
 <div class="container">  
   <div class="center">  
-    <button onclick="window.open('https://forgedatapositionfinal.streamlit.app/', '_blank');">Here</button>  
+    <button style="color: #778ee7;" onclick="window.open('https://forgedatapositionfinal.streamlit.app/', '_blank');">Here</button>  
   </div>  
 </div>
 
