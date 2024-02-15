@@ -15,7 +15,7 @@ As a result, one data position is usually made of :
 
 #### What general concepts behind the Data Position ?
 
-A data position is simply two interrelated things :
+A data position is simply three interrelated things :
 1. one colorizer
 2. one gatherizer
 3. one dispenser
