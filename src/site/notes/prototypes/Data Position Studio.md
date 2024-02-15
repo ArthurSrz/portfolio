@@ -35,7 +35,7 @@ Each bubble (representing a person) will be colorized accordingly to some establ
 
 # Demo instance of the Data Position Studio
 
-![Screenshot 2024-02-13 at 16.19.14.png|left|300](/img/user/Screenshot%202024-02-13%20at%2016.19.14.png)
+![dataposition.png|left|300](/img/user/media/dataposition.png)
 
 
 
