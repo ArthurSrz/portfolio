@@ -6,6 +6,7 @@
 
 
 <iframe src="https://opendatacanvas.org/" width="700" height="400"></iframe>
+
 # Design rationale
 
 Since the enactment of the Law for a Digital Republic in 2016, all public localities comprising over 3.500 inhabitants are required to publish their data in an accessible manner, gratuitously, and in such a format to not require the use of any specific software. 
