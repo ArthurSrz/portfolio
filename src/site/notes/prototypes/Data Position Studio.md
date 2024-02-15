@@ -2,6 +2,19 @@
 {"dg-publish":true,"permalink":"/prototypes/data-position-studio/","tags":["product"]}
 ---
 
+# Demo instance of the Data Position Studio
+
+![dataposition.png|left|300](/img/user/media/dataposition.png)
+
+
+
+
+<div class="container">  
+  <div class="center">  
+    <button style="color: #778ee7;" onclick="window.open('https://forgedatapositionfinal.streamlit.app/', '_blank');">Here</button>  
+  </div>  
+</div>
+
 # Design rationale
 
 #### Why a Data Position ?
@@ -33,18 +46,7 @@ Each bubble (representing a person) will be colorized accordingly to some establ
 > Hash-table, index table to allocate scores to each response to the questions
 > Algorithm (round robin)
 
-# Demo instance of the Data Position Studio
 
-![dataposition.png|left|300](/img/user/media/dataposition.png)
-
-
-
-
-<div class="container">  
-  <div class="center">  
-    <button style="color: #778ee7;" onclick="window.open('https://forgedatapositionfinal.streamlit.app/', '_blank');">Here</button>  
-  </div>  
-</div>
 
 
 
