@@ -8,7 +8,7 @@
 
 Their is a very diverse range of data users whose data literacy and needs differ greatly considering data : some will only look for one information in the dataset while other will use data as a core artifact of a data product they are making. 
 
-Yet, these diverse needs and data literacy have not been considered by open data producers while designing datasets. This method will support the open data communities in their effort to design new open data set or redesign existing ones whose reuse can address societal issues such as global warming, health and public transparency among others. 
+Yet, these diverse needs and data literacy have not been considered by open data producers while designing datasets. This method will support the open data communities in their effort to design new open data sets or redesign existing ones whose reuse can address societal issues such as global warming, health and public transparency among others. 
 
 # Get access to the method 
 
