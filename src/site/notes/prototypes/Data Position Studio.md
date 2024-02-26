@@ -26,29 +26,32 @@ As a result, one data position is usually made of :
 * responses with associated "scores" to measure skills level 
 * some reasoning to allocate profiles in a balanced manner
 
-#### What general concepts behind the Data Position ?
-
-A data position is simply three interrelated things :
-1. one colorizer
-2. one gatherizer
-3. one dispenser
-
-Interrelated because the dispenser will use some *dispensing function* based on the allocated color. Such as :
-
-> [!quote]
-> In every group I want 2 blue, 1 red and 3 yellows
-
-Each bubble (representing a person) will be colorized accordingly to some established rules as well. 
-
-
-> [!question] What are the concepts to understand ? 
-> Skill-related questions 
-> Hash-table, index table to allocate scores to each response to the questions
-> Algorithm (round robin)
+# Technical stack
 
 
 
 
+<div class="transclusion internal-embed is-loaded"><div class="markdown-embed">
 
 
 
+
+==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
+
+
+# Text Elements
+Databases 
+Airtable 
+Grist 
+Back 
+Front 
+
+# Embedded files
+6c9302ddd8669393887b7ca1b303b1b6a33d8178: [[Pasted Image 20240226100857_683.png]]
+fb11dd6a9d26182402125a497c756023646e6dc6: [[Pasted Image 20240226100928_704.png]]
+a55c125c325269127bc6d9142aff27dad5fcb5f7: [[Pasted Image 20240226101131_741.png]]
+5fcdf863a2858a2374221a1f74f9529eb6b5f8c6: [[Pasted Image 20240226101246_766.png]]
+
+
+
+</div></div>
