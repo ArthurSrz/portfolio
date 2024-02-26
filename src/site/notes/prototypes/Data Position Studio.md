@@ -29,5 +29,4 @@ As a result, one data position is usually made of :
 # Technical stack
 
 
-
-![tech_stack_data_position.png](/img/user/excalidraw/tech_stack_data_position.png)
+![tech_stack_data_position.png](/img/user/media/tech_stack_data_position.png)
