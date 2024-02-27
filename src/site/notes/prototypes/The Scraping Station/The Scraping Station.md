@@ -20,7 +20,7 @@
 
 # Function blocks 
 
-| block_name                                                                                    | Last Modified                |
+| Block name                                                                                    | Last Modified                |
 | --------------------------------------------------------------------------------------------- | ---------------------------- |
 | [[prototypes/The Scraping Station/Station manager\|Station manager]]                       | 10:49 AM - February 27, 2024 |
 | [[prototypes/The Scraping Station/Reusable scraper warehouse\|Reusable scraper warehouse]] | 10:49 AM - February 27, 2024 |
