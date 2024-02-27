@@ -18,4 +18,14 @@
 
 #### Why the Scraping Station ?
 
+# Function blocks 
+
+| block_name                                                                                    |
+| --------------------------------------------------------------------------------------------- |
+| [[prototypes/The Scraping Station/Station manager\|Station manager]]                       |
+| [[prototypes/The Scraping Station/Reusable scraper warehouse\|Reusable scraper warehouse]] |
+| [[prototypes/The Scraping Station/AI-assisted scraper forge\|AI-assisted scraper forge]]   |
+
+{ .block-language-dataview}
+
 # Technical stack
