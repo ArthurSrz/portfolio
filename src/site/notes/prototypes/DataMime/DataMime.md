@@ -17,5 +17,13 @@
 
 #### Why Datamime ? 
 
+# Function blocks 
+
+| block_name                                                                |
+| ------------------------------------------------------------------------- |
+| [[prototypes/DataMime/Incomplete data sample\|Incomplete data sample]] |
+| [[prototypes/DataMime/Data generator\|Data generator]]                 |
+
+{ .block-language-dataview}
 
 # Technical stack
