@@ -27,9 +27,9 @@ An map-based app assessing the transport data availability of every part of a tr
 
 | Block name                                                                                                | Last Modified                |
 | --------------------------------------------------------------------------------------------------------- | ---------------------------- |
-| [[prototypes/Transport Data Map/Transport data request automation\|Transport data request automation]] | 11:04 AM - February 29, 2024 |
-| [[prototypes/Transport Data Map/Data profiling algorithm\|Data profiling algorithm]]                   | 11:07 AM - February 29, 2024 |
-| [[prototypes/Transport Data Map/Map Interface\|Map Interface]]                                         | 11:09 AM - February 29, 2024 |
+| [[prototypes/Transport Data Map/Transport data request automation\|Transport data request automation]] | 11:24 AM - February 29, 2024 |
+| [[prototypes/Transport Data Map/Data profiling algorithm\|Data profiling algorithm]]                   | 11:22 AM - February 29, 2024 |
+| [[prototypes/Transport Data Map/Map Interface\|Map Interface]]                                         | 11:24 AM - February 29, 2024 |
 
 { .block-language-dataview}
 
