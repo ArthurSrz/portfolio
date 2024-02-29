@@ -21,8 +21,8 @@
 
 | Block name                                                                | Last modified                |
 | ------------------------------------------------------------------------- | ---------------------------- |
-| [[prototypes/DataMime/Incomplete data sample\|Incomplete data sample]] | 10:23 AM - February 27, 2024 |
 | [[prototypes/DataMime/Data generator\|Data generator]]                 | 10:24 AM - February 27, 2024 |
+| [[prototypes/DataMime/Incomplete data sample\|Incomplete data sample]] | 10:23 AM - February 27, 2024 |
 
 { .block-language-dataview}
 
