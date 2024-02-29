@@ -12,6 +12,7 @@
     <button style="color: #778ee7;" onclick="window.open('https://github.com/ArthurSrz/insideLLMsmind/blob/main/app.py', '_blank');">Here</button>  
   </div>  
 </div>
+
 # Design rationale
 
 #### Why Inside LLMs mind ?
