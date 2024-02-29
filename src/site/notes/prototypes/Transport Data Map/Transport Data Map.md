@@ -13,7 +13,7 @@ In rural and suburban areas, it might be hard to find the schedule of the bus th
 * data may have been published but not with an open license that let route planners reuse data
 * data is published but route planners do not know about it. 
 
-**The key here is to empower public authorities (legally in charge of public transport data management) so they can tackle any of the problem above. 
+**The key here is to empower public authorities (legally in charge of public transport data management) so they can tackle any of the problem above.** 
 
 This is where the Transport Data Map comes in.  
 #### What is the Transport Data Map ? 
