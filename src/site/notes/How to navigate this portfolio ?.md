@@ -2,6 +2,8 @@
 {"dg-publish":true,"permalink":"/how-to-navigate-this-portfolio/"}
 ---
 
+# Navigate this portfolio 
+
 This portfolio is structured as a network graph that you can see on **the right** 👉 or **at the bottom 👇** of each page. 
 
 Each node ⚫️  represents one part or subpart of the prototypes I have been building at work (and off work) for different organisations. 
