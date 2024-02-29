@@ -4,6 +4,7 @@
 
 # Check the code of the app
 
+
 ![insideLLMs mind.png|left|300](/img/user/media/insideLLMs%20mind.png)
 
 <div class="container">  
