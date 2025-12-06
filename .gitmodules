@@ -1,0 +1,3 @@
+[submodule "themes/hugo-constellation"]
+	path = themes/hugo-constellation
+	url = https://github.com/shashank-sharma/hugo-constellation
