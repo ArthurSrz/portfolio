@@ -21,40 +21,50 @@ connections:
     label: "EXPLORES"
 ---
 
-# Interactive 3D Knowledge Graph for Literary Analysis
+# End-to-End GraphRAG for Interpretability Outside the LLM's Mind
 
 Named after Jorge Luis Borges' *"The Library of Babel"* — a universe in the form of a vast library containing all possible books.
 
-[Live Demo](https://le-graphe-de-borges.vercel.app/) | [GitHub](https://github.com/ArthurSrz/nano-graphrag)
+[Live Demo](https://le-graphe-de-borges.vercel.app/) | [GitHub](https://github.com/ArthurSrz/borges_graph)
 
-## What it does
+## The Problem with RAG
 
-Borges Library lets you explore literary works through their knowledge graphs. Ask questions in natural language, and see how entities (people, places, concepts) connect across different books.
+Traditional RAG systems are black boxes: you ask a question, get an answer, but have no way to understand *how* the LLM arrived at that answer. The reasoning happens inside the model's mind, invisible to users.
 
-- **Multi-book querying**: Ask questions across your entire library at once
-- **3D force-directed graph**: Interactive visualization with color-coded entity types
-- **End-to-end interpretability**: Click any entity to see the source text that generated it
+## The Solution: GraphRAG with Full Interpretability
+
+Le Graphe de Borges is an **end-to-end GraphRAG implementation** that externalizes the LLM's reasoning into a visible, navigable knowledge graph. Every answer can be traced back through:
+
+1. **Entities** extracted from source texts
+2. **Relationships** between entities (who, what, where, when)
+3. **Source chunks** - the exact text passages that generated each entity
+4. **Community structures** - how entities cluster into themes
+
+## Interpretability Outside the LLM's Mind
+
+Instead of trusting a black-box answer, users can:
+- **See the graph** of entities the LLM used to answer
+- **Click any node** to view the source text chunk
+- **Trace the reasoning path** from question → entities → relationships → answer
+- **Verify factual grounding** by reading original passages
+
+This moves interpretability from *inside* the model to *outside* - into a visual, explorable structure that humans can audit and understand.
 
 ## Architecture
 
-The system is composed of two main components:
+**Knowledge Graph (Neo4j)**
+- 35,000+ entity nodes with semantic relationships
+- Community detection for thematic clustering
+- Chunk-to-entity provenance tracking
 
-**Frontend (Next.js 16 + React 19)**
-- 3D graph visualization using Three.js and D3.js
-- Natural language query interface
-- Source text provenance panels
+**GraphRAG Pipeline**
+- Entity extraction with relationship mapping
+- Hybrid search: graph traversal + vector similarity
+- Context-aware query enhancement
 
-**Backend (Reconciliation API)**
-- Coordinates between Neo4j graph database and GraphRAG queries
-- Progressive graph loading (300 → 400 → 500 → 1000 nodes)
-- Context-aware GraphRAG with visible nodes as context
+**3D Visualization (Next.js + Three.js)**
+- Force-directed graph with 1000+ visible nodes
+- Progressive loading for performance
+- Click-through to source text
 
-## Design Principles
-
-1. No orphaned nodes - All displayed entities must have relationships
-2. Books at center - Books are core entities, always central to queries
-3. Inter-book exploration - Connections between books are prioritized
-4. Visual clarity - Space between nodes to see relationships clearly
-5. Full interpretability - Navigate from text chunks to RAG answers through the graph
-
-**Stack**: Next.js, React, TypeScript, Three.js, Neo4j, GraphRAG, Railway, Vercel
+**Stack**: Neo4j, Next.js, React, TypeScript, Three.js, GraphRAG, Railway, Vercel
