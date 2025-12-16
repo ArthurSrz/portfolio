@@ -30,6 +30,7 @@ SHAPE_MAP = {
     "employer": "hexagon",
     "prototype": "diamond",
     "subcomponent": "triangle",
+    "education": "octagon",
 }
 
 # Track all created nodes for validation
@@ -240,12 +241,14 @@ def create_person_node():
     print("\n[Creating person node]")
     write_hugo_node(
         node_id='person',
-        title='Arthur Sarazin',
+        title='Arthur Sarazin, Ph.D',
         node_type='person',
-        subtitle='Data Product Designer & Researcher',
-        content='''I design and build data products that bridge the gap between complex data systems and human understanding.
+        subtitle='Design Science Researcher - Senior IT & AI Consultant',
+        content='''I was raised as a Design Science researcher working on the intricate mechanisms that turn open data into useful artifacts. During the course of my PhD, until now, I have been developing scientific methods and working products that make complex systems interpretable.
 
-My work spans frameworks, applications, and research tools - always with a focus on making data accessible and actionable.
+As Anthropic's research team has been using the theories of neural coding and representation and developed attribution graphs to make an interpretable version of a LLM, I have been using scientific theories and making artifacts to make sense out of data ecosystem dynamics, deeptech knowledge and lately RAG's internal mechanisms.
+
+**Skills:** Design Research, Data Product Prototyping (Python, Streamlit, Neo4j, Langchain, Scikit-learn), Knowledge Graph Systems, Scientific Writing
 
 Explore the constellation to discover my projects, collaborations, and professional journey.''',
         weight=1
@@ -259,6 +262,7 @@ def create_category_nodes():
         ('experiences', 'Experiences', 'Professional roles and expertise areas'),
         ('employers', 'Employers', 'Organizations I have worked with'),
         ('prototypes', 'Prototypes', 'Data products, tools, and frameworks'),
+        ('education', 'Education', 'Academic background and degrees'),
     ]
 
     for cat_id, title, description in categories:
@@ -324,6 +328,62 @@ def convert_employer_files():
             parent='employers',
             subtitle=build_subtitle(frontmatter, 'employer'),
             content=clean_content(body) if body else '',
+            weight=10
+        )
+
+
+def convert_education_files():
+    """Convert education folder files."""
+    print("\n[Converting education files]")
+    education_dir = OBSIDIAN_ROOT / 'education'
+
+    if not education_dir.exists():
+        print("  Warning: education directory not found")
+        return
+
+    for filepath in education_dir.glob('*.md'):
+        filename = filepath.stem
+        node_id = slugify(filename)
+
+        content = filepath.read_text(encoding='utf-8')
+        frontmatter, body = extract_frontmatter(content)
+
+        # Build subtitle with degree and field
+        subtitle_parts = []
+        degree = frontmatter.get('degree', '')
+        field = frontmatter.get('field', '')
+        if degree:
+            subtitle_parts.append(degree)
+        if field:
+            subtitle_parts.append(field)
+
+        # Add date range
+        start = frontmatter.get('start_date', '')
+        end = frontmatter.get('end_date', '')
+        if start:
+            start_year = str(start)[:4]
+            if end:
+                end_year = str(end)[:4]
+                subtitle_parts.append(f"{start_year}-{end_year}")
+            else:
+                subtitle_parts.append(f"{start_year}-present")
+
+        subtitle = ' | '.join(subtitle_parts) if subtitle_parts else ''
+
+        # Get institution for connection label
+        institution = frontmatter.get('institution', [])
+        connection_label = ''
+        if isinstance(institution, list) and institution:
+            connection_label = extract_wikilink(institution[0])
+
+        write_hugo_node(
+            node_id=node_id,
+            title=filename,
+            node_type='education',
+            parent='education',
+            subtitle=subtitle,
+            content=clean_content(body) if body else '',
+            connection_label=connection_label,
             weight=10
         )
 
@@ -447,6 +507,7 @@ def main():
     # Step 2: Convert content files
     convert_experience_files()
     convert_employer_files()
+    convert_education_files()
     convert_prototype_files()
 
     # Step 3: Copy media
