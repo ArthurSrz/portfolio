@@ -872,7 +872,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 { shape: 'circle', color: '#4299e1', label: 'Person' },
                 { shape: 'square', color: '#68d391', label: 'Experiences' },
                 { shape: 'diamond', color: '#f687b3', label: 'Prototypes' },
-                { shape: 'hexagon', color: '#9f7aea', label: 'Employers' },
+                { shape: 'hexagon', color: '#fc8181', label: 'Employers' },
                 { shape: 'octagon', color: '#805ad5', label: 'Research Themes' },
                 { shape: 'triangle', color: '#f6ad55', label: 'Technologies' },
                 { shape: 'pentagon', color: '#38b2ac', label: 'Categories' }
