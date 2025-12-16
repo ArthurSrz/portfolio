@@ -1,8 +1,14 @@
 ---
 title: "PhD Thesis: Open Data Canvas"
-subtitle: "2021 | thesis | Université Grenoble Alpes"
+type: "nodes"
+id: "pub-phd-thesis"
 shape: "octagon"
 parent: "publications"
+subtitle: "2021 | thesis | Université Grenoble Alpes"
+connectionLabel: ""
+connectionType: "solid"
+weight: 10
+draft: false
 connections:
   - target: "theme-open-data"
     label: "ADDRESSES_THEME"

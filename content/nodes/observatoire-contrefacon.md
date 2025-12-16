@@ -1,13 +1,14 @@
 ---
 title: "Observatoire Contrefaçon"
-subtitle: "2025-present | done | application"
+type: "nodes"
+id: "observatoire-contrefacon"
 shape: "diamond"
 parent: "prototypes"
-connections:
-  - target: "tech-neo4j"
-    label: "USES_TECHNOLOGY"
-  - target: "skill-knowledge-graphs"
-    label: "DEMONSTRATES_SKILL"
+subtitle: "2025-present | done | application"
+connectionLabel: "Veltys"
+connectionType: "solid"
+weight: 10
+draft: false
 ---
 
 # Observatoire de la Contrefaçon dans le Luxe

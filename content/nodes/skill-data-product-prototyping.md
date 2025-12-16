@@ -1,8 +1,14 @@
 ---
 title: "Data Product Prototyping"
-subtitle: "expert | technical"
+type: "nodes"
+id: "skill-data-product-prototyping"
 shape: "triangle"
 parent: "skills"
+subtitle: "expert | technical"
+connectionLabel: ""
+connectionType: "solid"
+weight: 10
+draft: false
 ---
 
 # Data Product Prototyping

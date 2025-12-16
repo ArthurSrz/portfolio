@@ -1,8 +1,14 @@
 ---
 title: "Next.js"
-subtitle: "framework | fullstack"
+type: "nodes"
+id: "tech-nextjs"
 shape: "triangle"
 parent: "technologies"
+subtitle: "framework | fullstack"
+connectionLabel: ""
+connectionType: "solid"
+weight: 10
+draft: false
 ---
 
 # Next.js

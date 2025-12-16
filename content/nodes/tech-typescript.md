@@ -1,8 +1,14 @@
 ---
 title: "TypeScript"
-subtitle: "language | frontend"
+type: "nodes"
+id: "tech-typescript"
 shape: "triangle"
 parent: "technologies"
+subtitle: "language | frontend"
+connectionLabel: ""
+connectionType: "solid"
+weight: 10
+draft: false
 ---
 
 # TypeScript

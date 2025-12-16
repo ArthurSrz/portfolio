@@ -1,8 +1,14 @@
 ---
 title: "PyTorch"
-subtitle: "framework | ML"
+type: "nodes"
+id: "tech-pytorch"
 shape: "triangle"
 parent: "technologies"
+subtitle: "framework | ML"
+connectionLabel: ""
+connectionType: "solid"
+weight: 10
+draft: false
 ---
 
 # PyTorch

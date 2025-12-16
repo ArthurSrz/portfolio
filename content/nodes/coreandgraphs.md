@@ -1,15 +1,14 @@
 ---
 title: "Core & Graphs"
-subtitle: "2025-present | in progress | framework"
+type: "nodes"
+id: "coreandgraphs"
 shape: "diamond"
 parent: "prototypes"
-connections:
-  - target: "tech-neo4j"
-    label: "USES_TECHNOLOGY"
-  - target: "skill-knowledge-graphs"
-    label: "DEMONSTRATES_SKILL"
-  - target: "theme-hdi"
-    label: "EXPLORES_THEME"
+subtitle: "2025-present | in progress | framework"
+connectionLabel: "Heretica"
+connectionType: "solid"
+weight: 10
+draft: false
 ---
 
 # Core & Graphs

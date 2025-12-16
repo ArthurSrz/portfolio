@@ -1,8 +1,14 @@
 ---
 title: "AI Agent Development"
-subtitle: "advanced | technical"
+type: "nodes"
+id: "skill-agent-development"
 shape: "triangle"
 parent: "skills"
+subtitle: "advanced | technical"
+connectionLabel: ""
+connectionType: "solid"
+weight: 10
+draft: false
 ---
 
 # AI Agent Development

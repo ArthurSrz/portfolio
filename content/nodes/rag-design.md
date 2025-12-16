@@ -1,11 +1,14 @@
 ---
 title: "RAG Design"
-subtitle: "2025-present | in progress | research"
+type: "nodes"
+id: "rag-design"
 shape: "diamond"
 parent: "prototypes"
-connections:
-  - target: "theme-interpretability"
-    label: "EXPLORES_THEME"
+subtitle: "2025-present | in progress | research"
+connectionLabel: "Side-project"
+connectionType: "solid"
+weight: 10
+draft: false
 ---
 
 # RAG Design

@@ -1,8 +1,14 @@
 ---
 title: "Scientific Writing"
-subtitle: "expert | methodological"
+type: "nodes"
+id: "skill-scientific-writing"
 shape: "triangle"
 parent: "skills"
+subtitle: "expert | methodological"
+connectionLabel: ""
+connectionType: "solid"
+weight: 10
+draft: false
 ---
 
 # Scientific Writing

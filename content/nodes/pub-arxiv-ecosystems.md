@@ -1,8 +1,14 @@
 ---
 title: "ArXiv: Open Data Ecosystems"
-subtitle: "2023 | paper | RGCS Symposium"
+type: "nodes"
+id: "pub-arxiv-ecosystems"
 shape: "octagon"
 parent: "publications"
+subtitle: "2023 | paper | RGCS Symposium"
+connectionLabel: ""
+connectionType: "solid"
+weight: 10
+draft: false
 connections:
   - target: "theme-open-data"
     label: "ADDRESSES_THEME"

@@ -1,8 +1,14 @@
 ---
 title: "Biology of LLMs (Blog Series)"
-subtitle: "2023-2024 | research blog | Dataflow"
+type: "nodes"
+id: "pub-biology-llms"
 shape: "octagon"
 parent: "publications"
+subtitle: "2023-2024 | research blog | Dataflow"
+connectionLabel: ""
+connectionType: "solid"
+weight: 10
+draft: false
 connections:
   - target: "theme-interpretability"
     label: "ADDRESSES_THEME"

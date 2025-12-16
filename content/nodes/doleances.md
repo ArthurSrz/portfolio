@@ -1,13 +1,14 @@
 ---
-title: "Doléances - Ce que veulent les Français"
-subtitle: "2025-present | done | research"
+title: "Doléances"
+type: "nodes"
+id: "doleances"
 shape: "diamond"
 parent: "prototypes"
-connections:
-  - target: "theme-open-data"
-    label: "EXPLORES_THEME"
-  - target: "skill-llm-interpretability"
-    label: "DEMONSTRATES_SKILL"
+subtitle: "2025-present | done | research"
+connectionLabel: "Heretica"
+connectionType: "solid"
+weight: 10
+draft: false
 ---
 
 # Ce que veulent les Français

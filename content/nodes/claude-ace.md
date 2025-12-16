@@ -1,13 +1,14 @@
 ---
 title: "Claude ACE"
-subtitle: "2025-present | in progress | application"
+type: "nodes"
+id: "claude-ace"
 shape: "diamond"
 parent: "prototypes"
-connections:
-  - target: "theme-interpretability"
-    label: "EXPLORES_THEME"
-  - target: "veltys"
-    label: "BUILT_FOR"
+subtitle: "2025-present | in progress | application"
+connectionLabel: "Veltys"
+connectionType: "solid"
+weight: 10
+draft: false
 ---
 
 # Claude ACE - Agentic Context Engineering

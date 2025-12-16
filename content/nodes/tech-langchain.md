@@ -1,8 +1,14 @@
 ---
 title: "LangChain"
-subtitle: "framework | LLM"
+type: "nodes"
+id: "tech-langchain"
 shape: "triangle"
 parent: "technologies"
+subtitle: "framework | LLM"
+connectionLabel: ""
+connectionType: "solid"
+weight: 10
+draft: false
 ---
 
 # LangChain
