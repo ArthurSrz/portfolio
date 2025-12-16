@@ -8,7 +8,7 @@ subtitle: "2023-present | done | application"
 connectionLabel: "Datactivist"
 connectionType: "solid"
 weight: 10
-draft: false
+draft: true
 ---
 
 # Reconciliation API

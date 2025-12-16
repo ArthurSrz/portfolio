@@ -1,32 +1,60 @@
 ---
-title: "Borges Graph"
+title: "Le Graphe de Borges"
 type: "nodes"
 id: "borges-graph"
 shape: "diamond"
 parent: "prototypes"
-subtitle: "2024-present | in progress | application"
-connectionLabel: "Heretica"
+subtitle: "2024 | application"
 connectionType: "solid"
-weight: 10
+weight: 15
 draft: false
+connections:
+  - target: "tech-neo4j"
+    label: "BUILT_WITH"
+  - target: "tech-nextjs"
+    label: "BUILT_WITH"
+  - target: "tech-typescript"
+    label: "BUILT_WITH"
+  - target: "skill-knowledge-graphs"
+    label: "REQUIRES"
+  - target: "theme-interpretability"
+    label: "EXPLORES"
 ---
 
-# Le Graphe de Borges
+# Interactive 3D Knowledge Graph for Literary Analysis
 
-A knowledge graph system inspired by Borges' concept of infinite libraries and interconnected knowledge.
+Named after Jorge Luis Borges' *"The Library of Babel"* — a universe in the form of a vast library containing all possible books.
 
-<div class="container">
-  <div class="center">
-    <button style="color: #778ee7;" onclick="window.open('https://github.com/ArthurSrz/borges_graph', '_blank');">View on GitHub</button>
-  </div>
-</div>
+[Live Demo](https://le-graphe-de-borges.vercel.app/) | [GitHub](https://github.com/ArthurSrz/nano-graphrag)
 
-# Design rationale
+## What it does
 
-Building an interpretable knowledge graph that can represent complex relationships between concepts, enabling navigation through interconnected ideas much like Borges' Library of Babel.
+Borges Library lets you explore literary works through their knowledge graphs. Ask questions in natural language, and see how entities (people, places, concepts) connect across different books.
 
-# Technical stack
+- **Multi-book querying**: Ask questions across your entire library at once
+- **3D force-directed graph**: Interactive visualization with color-coded entity types
+- **End-to-end interpretability**: Click any entity to see the source text that generated it
 
-- TypeScript
-- Neo4j
-- Knowledge Graph architecture
+## Architecture
+
+The system is composed of two main components:
+
+**Frontend (Next.js 16 + React 19)**
+- 3D graph visualization using Three.js and D3.js
+- Natural language query interface
+- Source text provenance panels
+
+**Backend (Reconciliation API)**
+- Coordinates between Neo4j graph database and GraphRAG queries
+- Progressive graph loading (300 → 400 → 500 → 1000 nodes)
+- Context-aware GraphRAG with visible nodes as context
+
+## Design Principles
+
+1. No orphaned nodes - All displayed entities must have relationships
+2. Books at center - Books are core entities, always central to queries
+3. Inter-book exploration - Connections between books are prioritized
+4. Visual clarity - Space between nodes to see relationships clearly
+5. Full interpretability - Navigate from text chunks to RAG answers through the graph
+
+**Stack**: Next.js, React, TypeScript, Three.js, Neo4j, GraphRAG, Railway, Vercel
