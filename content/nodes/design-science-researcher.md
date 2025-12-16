@@ -16,12 +16,8 @@ connections:
     label: "BUILT"
   - target: "borges-graph"
     label: "BUILT"
-  - target: "data-redesign-method"
-    label: "BUILT"
   - target: "theme-hdi"
     label: "EXPLORES"
-  - target: "skill-data-product-prototyping"
-    label: "REQUIRES"
 ---
 
 Member of the Research & Development team at Datactivist, in charge of building products to support data consultants' missions and clients.

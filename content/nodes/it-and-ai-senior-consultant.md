@@ -14,12 +14,6 @@ connections:
     label: "AT"
   - target: "slm-in-production"
     label: "BUILT"
-  - target: "governance-notifier"
-    label: "BUILT"
-  - target: "skill-agent-development"
-    label: "REQUIRES"
-  - target: "skill-llm-evaluation"
-    label: "REQUIRES"
   - target: "theme-interpretability"
     label: "EXPLORES"
 ---
