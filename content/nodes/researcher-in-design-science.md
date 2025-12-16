@@ -1,5 +1,5 @@
 ---
-title: "Researcher in Design Science"
+title: "PhD Researcher"
 type: "nodes"
 id: "researcher-in-design-science"
 shape: "square"
