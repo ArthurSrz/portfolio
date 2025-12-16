@@ -971,17 +971,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 .filter(link => link.source.id === centerNode.id || link.target.id === centerNode.id)
                 .map(link => link.source.id === centerNode.id ? link.target.id : link.source.id);
 
-            // Also include high-weight nodes (recent/important work) - weight >= 20
-            const highWeightNodeIds = this.nodes
-                .filter(n => (n.weight || 10) >= 20)
-                .map(n => n.id);
+            // Featured nodes to show by default (key recent work)
+            const featuredNodeIds = [
+                'it-and-ai-senior-consultant',  // Current role
+                'slm-in-production',            // Key prototype
+                'veltys'                        // Current employer
+            ];
 
             // Make center node visible
             centerNode.targetVisibility = 1;
 
-            // Make first level nodes AND high-weight nodes visible
+            // Make first level nodes AND featured nodes visible
             this.nodes.forEach(n => {
-                if (n.id === centerNode.id || firstLevelNodeIds.includes(n.id) || highWeightNodeIds.includes(n.id)) {
+                if (n.id === centerNode.id || firstLevelNodeIds.includes(n.id) || featuredNodeIds.includes(n.id)) {
                     n.targetVisibility = 1;
                 } else {
                     n.targetVisibility = 0;
