@@ -973,9 +973,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Featured nodes to show by default (key recent work)
             const featuredNodeIds = [
-                'it-and-ai-senior-consultant',  // Current role
-                'slm-in-production',            // Key prototype
-                'veltys'                        // Current employer
+                'it-and-ai-senior-consultant',  // Current role at Veltys
+                'slm-in-production',            // Key prototype (LLM in prod)
+                'veltys',                       // Current employer
+                'design-science-researcher',   // Previous role at Datactivist
+                'borges-graph',                // Key prototype (knowledge graph)
+                'datactivist'                  // Previous employer
             ];
 
             // Make center node visible
