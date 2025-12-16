@@ -80,17 +80,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 arrowSize: 15,
 
                 // Physics settings
-                linkDistance: 180,
-                charge: -500,
-                springLength: 220,        // Distance between nodes (increased for readability)
-                springStrength: 0.02,     // Strength of spring force (reduced for stability)
-                repulsionStrength: 25000, // Strength of repulsion force (increased to prevent overlap)
-                centeringStrength: 0.002, // Strength of centering force (reduced)
-                dampingFactor: 0.1,       // Damping factor for motion
+                linkDistance: 280,
+                charge: -800,
+                springLength: 320,        // Distance between nodes (increased for readability)
+                springStrength: 0.015,    // Strength of spring force (reduced for stability)
+                repulsionStrength: 50000, // Strength of repulsion force (high to prevent overlap)
+                centeringStrength: 0.001, // Strength of centering force (reduced)
+                dampingFactor: 0.12,      // Damping factor for motion
 
                 // Node positioning
-                firstLevelRadius: 180,    // Distance of first-level connections from center node
-                secondLevelRadius: 260,   // Distance of second-level connections
+                firstLevelRadius: 280,    // Distance of first-level connections from center node
+                secondLevelRadius: 400,   // Distance of second-level connections
                 outerLevelRadius: 300,    // Distance of unconnected nodes
                 initialRadius: 150,       // Initial radius for non-person nodes
                 randomPositionOffset: 50, // Random position variance for initial node placement
@@ -788,8 +788,8 @@ document.addEventListener('DOMContentLoaded', function() {
             this.ctx.stroke();
             this.ctx.setLineDash([]);
 
-        // Draw connection label if both nodes are highly visible
-            if (linkVisibility > 0.7 && link.label) {
+        // Draw connection label if both nodes are visible
+            if (linkVisibility > 0.1 && link.label) {
                 this.drawLinkLabel(link, source, target, textColor);
             }
 
