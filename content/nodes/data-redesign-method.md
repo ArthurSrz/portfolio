@@ -6,7 +6,7 @@ shape: "diamond"
 parent: "prototypes"
 subtitle: "2023-present | method"
 connectionType: "solid"
-weight: 11
+weight: 12
 draft: false
 connections:
   - target: "theme-interpretability"

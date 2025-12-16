@@ -7,7 +7,7 @@ parent: "prototypes"
 subtitle: "2024-present | in progress | application"
 connectionLabel: "Datactivist"
 connectionType: "solid"
-weight: 10
+weight: 8
 draft: false
 ---
 

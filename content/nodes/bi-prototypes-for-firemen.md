@@ -7,7 +7,7 @@ parent: "prototypes"
 subtitle: "2021-2022 | done | BI Dashboard"
 connectionLabel: "SDIS 38 (freelance)"
 connectionType: "solid"
-weight: 10
+weight: 6
 draft: false
 ---
 

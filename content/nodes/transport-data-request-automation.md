@@ -5,7 +5,7 @@ id: "transport-data-request-automation"
 shape: "triangle"
 parent: "transport-data-map"
 connectionType: "solid"
-weight: 20
+weight: 8
 draft: false
 ---
 

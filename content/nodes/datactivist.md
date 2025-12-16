@@ -6,7 +6,7 @@ shape: "hexagon"
 parent: "employers"
 subtitle: "2018-2024"
 connectionType: "solid"
-weight: 10
+weight: 12
 draft: false
 ---
 

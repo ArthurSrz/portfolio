@@ -7,7 +7,7 @@ parent: "education"
 subtitle: "Master's degree | Financial Engineering and Management | 2011-2017"
 connectionLabel: "SciencesPo Grenoble"
 connectionType: "solid"
-weight: 10
+weight: 6
 draft: false
 ---
 

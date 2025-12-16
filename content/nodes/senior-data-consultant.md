@@ -6,7 +6,7 @@ shape: "square"
 parent: "experiences"
 subtitle: "2018-2022"
 connectionType: "solid"
-weight: 10
+weight: 6
 draft: false
 ---
 

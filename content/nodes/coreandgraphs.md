@@ -7,7 +7,7 @@ parent: "prototypes"
 subtitle: "2025-present | in progress | framework"
 connectionLabel: "Heretica"
 connectionType: "solid"
-weight: 10
+weight: 25
 draft: false
 connections:
   - target: "theme-interpretability"

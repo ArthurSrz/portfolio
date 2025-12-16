@@ -7,7 +7,7 @@ parent: "prototypes"
 subtitle: "2017-2021 | done | framework"
 connectionLabel: "Université Grenoble Alpes"
 connectionType: "solid"
-weight: 10
+weight: 6
 draft: false
 ---
 

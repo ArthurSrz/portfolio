@@ -7,7 +7,7 @@ parent: "prototypes"
 subtitle: "2025-present | in progress | research"
 connectionLabel: "Side-project"
 connectionType: "solid"
-weight: 10
+weight: 25
 draft: false
 connections:
   - target: "tech-langchain"

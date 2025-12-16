@@ -7,7 +7,7 @@ parent: "experiences"
 subtitle: "2017-2021 | Université Grenoble Alpes"
 connectionLabel: "UGA"
 connectionType: "solid"
-weight: 10
+weight: 6
 draft: false
 connections:
   - target: "université-grenoble-alpes"

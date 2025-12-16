@@ -6,7 +6,7 @@ shape: "diamond"
 parent: "prototypes"
 subtitle: "2024 | application"
 connectionType: "solid"
-weight: 15
+weight: 20
 draft: false
 connections:
   - target: "tech-neo4j"

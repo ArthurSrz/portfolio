@@ -5,7 +5,7 @@ id: "open-data-patchwork"
 shape: "triangle"
 parent: "open-data-canvas"
 connectionType: "solid"
-weight: 20
+weight: 8
 draft: false
 ---
 

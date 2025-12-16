@@ -7,7 +7,7 @@ parent: "prototypes"
 subtitle: "2023-present | in progress | application"
 connectionLabel: "Heretica"
 connectionType: "solid"
-weight: 10
+weight: 8
 draft: false
 ---
 

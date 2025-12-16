@@ -7,7 +7,7 @@ parent: "prototypes"
 subtitle: "2025-present | done | application"
 connectionLabel: "Veltys"
 connectionType: "solid"
-weight: 10
+weight: 25
 draft: false
 connections:
   - target: "tech-nextjs"

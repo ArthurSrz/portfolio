@@ -6,7 +6,7 @@ shape: "triangle"
 parent: "the-scraping-station"
 subtitle: "component"
 connectionType: "solid"
-weight: 20
+weight: 8
 draft: false
 ---
 

@@ -7,7 +7,7 @@ parent: "education"
 subtitle: "Doctor of Philosophy - PhD | Design Science | 2017-2021"
 connectionLabel: "Université Grenoble Alpes"
 connectionType: "solid"
-weight: 10
+weight: 6
 draft: false
 ---
 

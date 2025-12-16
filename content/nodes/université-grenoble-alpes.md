@@ -6,7 +6,7 @@ shape: "hexagon"
 parent: "employers"
 subtitle: "2017-2021 | PhD Research"
 connectionType: "solid"
-weight: 10
+weight: 6
 draft: false
 ---
 

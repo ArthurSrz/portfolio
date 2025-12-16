@@ -6,7 +6,7 @@ shape: "square"
 parent: "experiences"
 subtitle: "2024-present"
 connectionType: "solid"
-weight: 10
+weight: 20
 draft: false
 connections:
   - target: "veltys"

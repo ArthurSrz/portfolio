@@ -7,7 +7,7 @@ parent: "prototypes"
 subtitle: "2021-2024 | in progress | features"
 connectionLabel: "IAE Grenoble (university vacation)"
 connectionType: "solid"
-weight: 10
+weight: 8
 draft: false
 ---
 

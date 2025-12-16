@@ -6,7 +6,7 @@ shape: "hexagon"
 parent: "employers"
 subtitle: "2021-2022 | Freelance"
 connectionType: "solid"
-weight: 10
+weight: 6
 draft: false
 ---
 

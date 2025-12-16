@@ -7,7 +7,7 @@ parent: "publications"
 subtitle: "2021 | thesis | Université Grenoble Alpes"
 connectionLabel: ""
 connectionType: "solid"
-weight: 10
+weight: 6
 draft: false
 connections:
   - target: "theme-open-data"
