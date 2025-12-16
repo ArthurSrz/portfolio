@@ -5,6 +5,7 @@ id: "it-and-ai-senior-consultant"
 shape: "square"
 parent: "experiences"
 subtitle: "2024-present"
+connectionLabel: "Veltys"
 connectionType: "solid"
 weight: 20
 draft: false

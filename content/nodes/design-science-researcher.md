@@ -5,6 +5,7 @@ id: "design-science-researcher"
 shape: "square"
 parent: "experiences"
 subtitle: "2022-2024"
+connectionLabel: "Datactivist"
 connectionType: "solid"
 weight: 12
 draft: false
