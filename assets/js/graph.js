@@ -234,10 +234,10 @@ document.addEventListener('DOMContentLoaded', function() {
             // Process all other nodes
             this.graphData.nodes.forEach(nodeData => {
                 // Calculate radius based on weight (higher weight = bigger node)
-                // Weight range: 6-25, radius range: ~7-13
+                // Weight range: 6-25, creates ~2.5x size difference
                 const baseRadius = this.graphData.visualSettings?.nodeSize?.default || this.config.nodeRadius;
                 const weight = nodeData.weight || 10;
-                const weightedRadius = baseRadius * (0.6 + weight / 25);
+                const weightedRadius = baseRadius * (0.3 + weight / 12);
 
                 const node = {
                     ...nodeData,
@@ -971,12 +971,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 .filter(link => link.source.id === centerNode.id || link.target.id === centerNode.id)
                 .map(link => link.source.id === centerNode.id ? link.target.id : link.source.id);
 
+            // Also include high-weight nodes (recent/important work) - weight >= 20
+            const highWeightNodeIds = this.nodes
+                .filter(n => (n.weight || 10) >= 20)
+                .map(n => n.id);
+
             // Make center node visible
             centerNode.targetVisibility = 1;
 
-            // Make first level nodes visible
+            // Make first level nodes AND high-weight nodes visible
             this.nodes.forEach(n => {
-                if (n.id === centerNode.id || firstLevelNodeIds.includes(n.id)) {
+                if (n.id === centerNode.id || firstLevelNodeIds.includes(n.id) || highWeightNodeIds.includes(n.id)) {
                     n.targetVisibility = 1;
                 } else {
                     n.targetVisibility = 0;
