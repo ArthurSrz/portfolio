@@ -9,6 +9,11 @@ connectionLabel: "Veltys"
 connectionType: "solid"
 weight: 10
 draft: false
+connections:
+  - target: "theme-interpretability"
+    label: "EXPLORES"
+  - target: "skill-agent-development"
+    label: "USES"
 ---
 
 # Claude ACE - Agentic Context Engineering

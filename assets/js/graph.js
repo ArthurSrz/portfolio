@@ -65,6 +65,12 @@ document.addEventListener('DOMContentLoaded', function() {
             this.lastPanX = 0;
             this.lastPanY = 0;
             this.sizeMultiplier = 1;
+
+            // Progressive disclosure state
+            this.lastClickTime = 0;
+            this.lastClickedNodeId = null;
+            this.doubleClickThreshold = 300; // ms
+            this.maxRecentNodes = 5; // Show only 5 most recent on first click
         }
 
         // Set up configuration parameters
@@ -1818,13 +1824,141 @@ document.addEventListener('DOMContentLoaded', function() {
             if (this.draggedNode) {
             // If moved less than 5px, consider it a click
                 if (this.dragDistance < 5) {
-                    this.selectNode(this.draggedNode);
+                    this.handleNodeClick(this.draggedNode);
             }
 
             setTimeout(() => {
                     this.draggedNode = null;
             }, 100);
         }
+    }
+
+    // Handle node click with progressive disclosure (single vs double click)
+    handleNodeClick(node) {
+        const now = Date.now();
+        const isDoubleClick = (now - this.lastClickTime < this.doubleClickThreshold) &&
+                              (this.lastClickedNodeId === node.id);
+
+        this.lastClickTime = now;
+        this.lastClickedNodeId = node.id;
+
+        if (isDoubleClick) {
+            // Double click: show all connected nodes
+            this.selectNodeExpanded(node);
+        } else {
+            // Single click: show only recent/limited nodes
+            this.selectNodeLimited(node);
+        }
+    }
+
+    // Select node with limited connections (single click behavior)
+    selectNodeLimited(node) {
+        if (!node) return;
+
+        this.initialCenterNode = node;
+        this.selectedNode = node;
+
+        // Update URL
+        const url = node.url || (node.type === 'person' ? '/' : `/nodes/${node.id}`);
+        history.pushState({ nodeId: node.id }, document.title, url);
+
+        // Add the node's section
+        this.addNodeSectionIfNeeded(node);
+        this.expandNode(node);
+
+        // Show sidebar on mobile
+        if (this.isMobileDevice()) {
+            this.rightCardContainer.classList.add('active');
+        }
+
+        // Center on node with LIMITED connections
+        this.centerOnNodeLimited(node);
+        this.adjustRightCardHeight();
+    }
+
+    // Select node with all connections (double click behavior)
+    selectNodeExpanded(node) {
+        if (!node) return;
+
+        this.initialCenterNode = node;
+        this.selectedNode = node;
+
+        // Update URL
+        const url = node.url || (node.type === 'person' ? '/' : `/nodes/${node.id}`);
+        history.pushState({ nodeId: node.id }, document.title, url);
+
+        // Add the node's section
+        this.addNodeSectionIfNeeded(node);
+        this.expandNode(node);
+
+        // Show sidebar on mobile
+        if (this.isMobileDevice()) {
+            this.rightCardContainer.classList.add('active');
+        }
+
+        // Center on node with ALL connections (original behavior)
+        this.centerOnNode(node);
+        this.adjustRightCardHeight();
+    }
+
+    // Extract year from subtitle for sorting (e.g., "2025-present | in progress")
+    getNodeYear(node) {
+        if (!node.subtitle) return 2000; // Default old year for nodes without dates
+
+        const yearMatch = node.subtitle.match(/(\d{4})/);
+        if (yearMatch) {
+            return parseInt(yearMatch[1]);
+        }
+        return 2000;
+    }
+
+    // Sort nodes by recency (newest first)
+    sortNodesByRecency(nodes) {
+        return [...nodes].sort((a, b) => this.getNodeYear(b) - this.getNodeYear(a));
+    }
+
+    // Center on node with limited connections (progressive disclosure)
+    centerOnNodeLimited(node) {
+        if (!node) return;
+
+        const nodeDistances = this.findConnectedNodes(node.id);
+        const visibleNodeIds = [node.id];
+        const nodesToAddSectionsFor = [];
+        const personNode = this.nodes.find(n => n.type === 'person');
+        const personNodeId = personNode ? personNode.id : null;
+
+        // Get first level nodes only
+        let firstLevelNodes = this.nodes.filter(n => nodeDistances.get(n.id) === 1);
+
+        // Sort by recency and limit to maxRecentNodes
+        firstLevelNodes = this.sortNodesByRecency(firstLevelNodes).slice(0, this.maxRecentNodes);
+        const firstLevelNodeIds = firstLevelNodes.map(n => n.id);
+
+        // Set visibility: only show the node, person, and limited first-level connections
+        this.nodes.forEach(n => {
+            if (n.id === node.id || n.id === personNodeId || firstLevelNodeIds.includes(n.id)) {
+                n.targetVisibility = 1;
+                visibleNodeIds.push(n.id);
+
+                if (this.visibilityMap[n.id] >= 0.5 && n.id !== node.id) {
+                    nodesToAddSectionsFor.push(n);
+                }
+            } else {
+                n.targetVisibility = 0;
+            }
+        });
+
+        // Queue nodes for visibility that aren't already visible
+        const nodesToShow = firstLevelNodeIds.filter(id => (this.visibilityMap[id] || 0) < 0.5);
+        if (nodesToShow.length > 0) {
+            this.queueNodesForVisibility(nodesToShow);
+        }
+
+        this.removeHiddenNodeSections(visibleNodeIds);
+        nodesToAddSectionsFor.forEach(n => {
+            this.addNodeSectionIfNeeded(n);
+        });
+        this.positionNodesForViewing(node, nodeDistances);
     }
 
     // Touch event handlers
@@ -1898,7 +2032,7 @@ document.addEventListener('DOMContentLoaded', function() {
         handleTouchEnd() {
             if (this.draggedNode) {
                 if (this.dragDistance < 5) {
-                    this.selectNode(this.draggedNode);
+                    this.handleNodeClick(this.draggedNode);
                 }
 
             setTimeout(() => {

@@ -9,6 +9,11 @@ connectionLabel: "Heretica"
 connectionType: "solid"
 weight: 10
 draft: false
+connections:
+  - target: "theme-interpretability"
+    label: "EXPLORES"
+  - target: "theme-hdi"
+    label: "EXPLORES"
 ---
 
 # Core & Graphs

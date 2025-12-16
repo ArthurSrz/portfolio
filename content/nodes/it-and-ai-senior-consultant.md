@@ -8,6 +8,15 @@ subtitle: "2024-present"
 connectionType: "solid"
 weight: 10
 draft: false
+connections:
+  - target: "veltys"
+    label: "AT"
+  - target: "tech-pytorch"
+    label: "USES"
+  - target: "skill-agent-development"
+    label: "REQUIRES"
+  - target: "theme-interpretability"
+    label: "EXPLORES"
 ---
 
 As an IT & AI Senior Consultant at Veltys, I am in charge of transferring knowledge between non-technical clients and engineers developing statistical models.

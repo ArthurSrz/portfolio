@@ -9,6 +9,13 @@ connectionLabel: "Veltys"
 connectionType: "solid"
 weight: 10
 draft: false
+connections:
+  - target: "tech-nextjs"
+    label: "BUILT_WITH"
+  - target: "tech-typescript"
+    label: "BUILT_WITH"
+  - target: "theme-interpretability"
+    label: "EXPLORES"
 ---
 
 # Observatoire de la Contrefaçon dans le Luxe

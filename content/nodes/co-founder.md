@@ -9,6 +9,13 @@ connectionLabel: "Veltys"
 connectionType: "solid"
 weight: 10
 draft: false
+connections:
+  - target: "veltys"
+    label: "AT"
+  - target: "tech-pytorch"
+    label: "USES"
+  - target: "skill-data-product-prototyping"
+    label: "REQUIRES"
 ---
 
 # Co-founder at Veltys

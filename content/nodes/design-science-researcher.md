@@ -8,6 +8,13 @@ subtitle: "2022-2024"
 connectionType: "solid"
 weight: 10
 draft: false
+connections:
+  - target: "datactivist"
+    label: "AT"
+  - target: "theme-hdi"
+    label: "EXPLORES"
+  - target: "skill-data-product-prototyping"
+    label: "REQUIRES"
 ---
 
 Member of the Research & Development team at Datactivist, in charge of building products to support data consultants' missions and clients.

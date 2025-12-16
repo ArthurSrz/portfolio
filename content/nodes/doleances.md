@@ -9,6 +9,11 @@ connectionLabel: "Heretica"
 connectionType: "solid"
 weight: 10
 draft: false
+connections:
+  - target: "tech-pytorch"
+    label: "BUILT_WITH"
+  - target: "theme-open-data"
+    label: "EXPLORES"
 ---
 
 # Ce que veulent les Français

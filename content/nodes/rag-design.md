@@ -9,6 +9,11 @@ connectionLabel: "Side-project"
 connectionType: "solid"
 weight: 10
 draft: false
+connections:
+  - target: "tech-langchain"
+    label: "BUILT_WITH"
+  - target: "theme-interpretability"
+    label: "EXPLORES"
 ---
 
 # RAG Design

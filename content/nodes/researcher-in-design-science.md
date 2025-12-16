@@ -9,6 +9,13 @@ connectionLabel: "UGA"
 connectionType: "solid"
 weight: 10
 draft: false
+connections:
+  - target: "université-grenoble-alpes"
+    label: "AT"
+  - target: "theme-open-data"
+    label: "EXPLORES"
+  - target: "skill-scientific-writing"
+    label: "REQUIRES"
 ---
 
 # PhD Researcher at Université Grenoble Alpes
