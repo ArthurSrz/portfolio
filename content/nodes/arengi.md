@@ -7,7 +7,7 @@ parent: "employers"
 subtitle: "2024-present"
 connectionType: "solid"
 weight: 20
-draft: false
+draft: true
 connections:
   - target: "veltys"
     label: "CLIENT_OF"
