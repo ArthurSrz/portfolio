@@ -977,8 +977,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 'slm-in-production',            // Key prototype (LLM in prod)
                 'veltys',                       // Current employer
                 'design-science-researcher',   // Previous role at Datactivist
-                'borges-graph',                // Key prototype (knowledge graph)
-                'datactivist'                  // Previous employer
+                'borges-graph',                // Key prototype (GraphRAG)
+                'datactivist',                 // Previous employer
+                'theme-interpretability',      // Research theme
+                'intuitiveness'                // Key prototype (data redesign)
             ];
 
             // Make center node visible
