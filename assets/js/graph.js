@@ -80,17 +80,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 arrowSize: 15,
 
                 // Physics settings
-                linkDistance: 120,
-                charge: -400,
-                springLength: 160,        // Distance between nodes (increased for readability)
-                springStrength: 0.025,    // Strength of spring force (slightly reduced)
-                repulsionStrength: 15000,  // Strength of repulsion force (increased)
-                centeringStrength: 0.003, // Strength of centering force
+                linkDistance: 180,
+                charge: -500,
+                springLength: 220,        // Distance between nodes (increased for readability)
+                springStrength: 0.02,     // Strength of spring force (reduced for stability)
+                repulsionStrength: 25000, // Strength of repulsion force (increased to prevent overlap)
+                centeringStrength: 0.002, // Strength of centering force (reduced)
                 dampingFactor: 0.1,       // Damping factor for motion
 
                 // Node positioning
-                firstLevelRadius: 120,    // Distance of first-level connections from center node
-                secondLevelRadius: 170,   // Distance of second-level connections
+                firstLevelRadius: 180,    // Distance of first-level connections from center node
+                secondLevelRadius: 260,   // Distance of second-level connections
                 outerLevelRadius: 300,    // Distance of unconnected nodes
                 initialRadius: 150,       // Initial radius for non-person nodes
                 randomPositionOffset: 50, // Random position variance for initial node placement
