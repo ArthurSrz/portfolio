@@ -182,8 +182,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Fetch graph data from server
         fetchGraphData() {
-            // Use relative path to work with any baseURL (e.g., /portfolio/)
-            fetch('./index.json')
+            // Determine base URL from script src (works with any baseURL like /portfolio/)
+            const scripts = document.querySelectorAll('script[src*="graph.min"]');
+            let baseUrl = '/';
+            if (scripts.length > 0) {
+                const scriptSrc = scripts[0].src;
+                // Extract base path: /portfolio/js/graph.min.xxx.js -> /portfolio/
+                baseUrl = scriptSrc.substring(0, scriptSrc.indexOf('/js/') + 1);
+            }
+            fetch(baseUrl + 'index.json')
                 .then(response => response.json())
                 .then(data => {
                     this.graphData = data;
