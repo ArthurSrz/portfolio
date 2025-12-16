@@ -868,23 +868,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Draw legend showing shapes and their meanings
         drawLegend() {
+            const isMobile = this.isMobileDevice();
+
             const legendItems = [
                 { shape: 'circle', color: '#4299e1', label: 'Person' },
                 { shape: 'square', color: '#68d391', label: 'Experiences' },
                 { shape: 'diamond', color: '#f687b3', label: 'Prototypes' },
                 { shape: 'hexagon', color: '#fc8181', label: 'Employers' },
-                { shape: 'octagon', color: '#805ad5', label: 'Research Themes' },
-                { shape: 'triangle', color: '#f6ad55', label: 'Technologies' },
+                { shape: 'octagon', color: '#805ad5', label: 'Themes' },
+                { shape: 'triangle', color: '#f6ad55', label: 'Tech' },
                 { shape: 'pentagon', color: '#38b2ac', label: 'Categories' }
             ];
 
-            const padding = 15;
-            const itemHeight = 28;
-            const shapeSize = 10;
-            const legendWidth = 160;
+            // Responsive sizing
+            const padding = isMobile ? 10 : 15;
+            const itemHeight = isMobile ? 22 : 28;
+            const shapeSize = isMobile ? 7 : 10;
+            const legendWidth = isMobile ? 120 : 160;
             const legendHeight = legendItems.length * itemHeight + padding * 2;
             const x = padding;
-            const y = this.height - legendHeight - padding;
+            const y = this.height - legendHeight - padding - (isMobile ? 40 : 0); // Extra space on mobile for footer
 
             this.ctx.save();
 
@@ -900,7 +903,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Draw legend items
             const textColor = isDark ? '#ffffff' : '#333333';
-            this.ctx.font = '12px Arial';
+            this.ctx.font = isMobile ? '10px Arial' : '12px Arial';
             this.ctx.textAlign = 'left';
             this.ctx.textBaseline = 'middle';
 
