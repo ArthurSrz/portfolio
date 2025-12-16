@@ -22,6 +22,7 @@
       "subtitle": "{{ $node.Params.subtitle }}",
       "description": {{ with $node.Content }}{{ . | jsonify }}{{ else }}""{{ end }}
       {{ with $node.Params.parent }},"parent": "{{ . }}"{{ end }}
+      ,"weight": {{ default 10 $node.Params.weight }}
     }{{ if ne (add $index 1) $len }},{{ end }}
     {{ end }}
   ],

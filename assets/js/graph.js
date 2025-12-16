@@ -233,11 +233,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Process all other nodes
             this.graphData.nodes.forEach(nodeData => {
+                // Calculate radius based on weight (higher weight = bigger node)
+                // Weight range: 6-25, radius range: ~7-13
+                const baseRadius = this.graphData.visualSettings?.nodeSize?.default || this.config.nodeRadius;
+                const weight = nodeData.weight || 10;
+                const weightedRadius = baseRadius * (0.6 + weight / 25);
+
                 const node = {
                     ...nodeData,
                     x: centerX + (Math.random() - 0.5) * 100,
                     y: centerY + (Math.random() - 0.5) * 100,
-                    radius: (this.graphData.visualSettings?.nodeSize?.default || this.config.nodeRadius) * this.sizeMultiplier,
+                    radius: weightedRadius * this.sizeMultiplier,
                     color: this.graphData.visualSettings?.colors?.[nodeData.shape] ||
                            this.graphData.visualSettings?.colors?.default || "#ed8936",
                     mass: 1,
