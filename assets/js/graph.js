@@ -80,11 +80,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 arrowSize: 15,
 
                 // Physics settings
-                linkDistance: 80,
+                linkDistance: 120,
                 charge: -400,
-                springLength: 110,        // Distance between nodes
-                springStrength: 0.03,     // Strength of spring force
-                repulsionStrength: 13000,  // Strength of repulsion force
+                springLength: 160,        // Distance between nodes (increased for readability)
+                springStrength: 0.025,    // Strength of spring force (slightly reduced)
+                repulsionStrength: 15000,  // Strength of repulsion force (increased)
                 centeringStrength: 0.003, // Strength of centering force
                 dampingFactor: 0.1,       // Damping factor for motion
 

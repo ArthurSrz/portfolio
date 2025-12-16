@@ -12,6 +12,12 @@ draft: false
 connections:
   - target: "datactivist"
     label: "AT"
+  - target: "intuitiveness"
+    label: "BUILT"
+  - target: "borges-graph"
+    label: "BUILT"
+  - target: "data-redesign-method"
+    label: "BUILT"
   - target: "theme-hdi"
     label: "EXPLORES"
   - target: "skill-data-product-prototyping"
