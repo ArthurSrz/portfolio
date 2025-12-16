@@ -866,6 +866,107 @@ document.addEventListener('DOMContentLoaded', function() {
             this.ctx.restore();
     }
 
+        // Draw legend showing shapes and their meanings
+        drawLegend() {
+            const legendItems = [
+                { shape: 'circle', color: '#4299e1', label: 'Person' },
+                { shape: 'square', color: '#68d391', label: 'Experiences' },
+                { shape: 'diamond', color: '#f687b3', label: 'Prototypes' },
+                { shape: 'hexagon', color: '#9f7aea', label: 'Employers' },
+                { shape: 'octagon', color: '#805ad5', label: 'Research Themes' },
+                { shape: 'triangle', color: '#f6ad55', label: 'Technologies' },
+                { shape: 'pentagon', color: '#38b2ac', label: 'Categories' }
+            ];
+
+            const padding = 15;
+            const itemHeight = 28;
+            const shapeSize = 10;
+            const legendWidth = 160;
+            const legendHeight = legendItems.length * itemHeight + padding * 2;
+            const x = padding;
+            const y = this.height - legendHeight - padding;
+
+            this.ctx.save();
+
+            // Draw legend background
+            const isDark = this.isDarkTheme();
+            this.ctx.fillStyle = isDark ? 'rgba(30, 30, 30, 0.9)' : 'rgba(255, 255, 255, 0.9)';
+            this.ctx.strokeStyle = isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)';
+            this.ctx.lineWidth = 1;
+            this.ctx.beginPath();
+            this.ctx.roundRect(x, y, legendWidth, legendHeight, 8);
+            this.ctx.fill();
+            this.ctx.stroke();
+
+            // Draw legend items
+            const textColor = isDark ? '#ffffff' : '#333333';
+            this.ctx.font = '12px Arial';
+            this.ctx.textAlign = 'left';
+            this.ctx.textBaseline = 'middle';
+
+            legendItems.forEach((item, index) => {
+                const itemY = y + padding + index * itemHeight + itemHeight / 2;
+                const shapeX = x + padding + shapeSize;
+                const textX = x + padding + shapeSize * 2 + 12;
+
+                // Draw shape
+                this.ctx.fillStyle = item.color;
+                this.ctx.beginPath();
+
+                if (item.shape === 'circle') {
+                    this.ctx.arc(shapeX, itemY, shapeSize, 0, Math.PI * 2);
+                } else if (item.shape === 'square') {
+                    this.ctx.rect(shapeX - shapeSize, itemY - shapeSize, shapeSize * 2, shapeSize * 2);
+                } else if (item.shape === 'diamond') {
+                    this.ctx.moveTo(shapeX, itemY - shapeSize);
+                    this.ctx.lineTo(shapeX + shapeSize, itemY);
+                    this.ctx.lineTo(shapeX, itemY + shapeSize);
+                    this.ctx.lineTo(shapeX - shapeSize, itemY);
+                    this.ctx.closePath();
+                } else if (item.shape === 'triangle') {
+                    this.ctx.moveTo(shapeX, itemY - shapeSize);
+                    this.ctx.lineTo(shapeX + shapeSize, itemY + shapeSize);
+                    this.ctx.lineTo(shapeX - shapeSize, itemY + shapeSize);
+                    this.ctx.closePath();
+                } else if (item.shape === 'hexagon') {
+                    for (let i = 0; i < 6; i++) {
+                        const angle = (Math.PI / 3) * i - Math.PI / 2;
+                        const hx = shapeX + shapeSize * Math.cos(angle);
+                        const hy = itemY + shapeSize * Math.sin(angle);
+                        if (i === 0) this.ctx.moveTo(hx, hy);
+                        else this.ctx.lineTo(hx, hy);
+                    }
+                    this.ctx.closePath();
+                } else if (item.shape === 'pentagon') {
+                    for (let i = 0; i < 5; i++) {
+                        const angle = (Math.PI * 2 / 5) * i - Math.PI / 2;
+                        const px = shapeX + shapeSize * Math.cos(angle);
+                        const py = itemY + shapeSize * Math.sin(angle);
+                        if (i === 0) this.ctx.moveTo(px, py);
+                        else this.ctx.lineTo(px, py);
+                    }
+                    this.ctx.closePath();
+                } else if (item.shape === 'octagon') {
+                    for (let i = 0; i < 8; i++) {
+                        const angle = (Math.PI / 4) * i - Math.PI / 8;
+                        const ox = shapeX + shapeSize * Math.cos(angle);
+                        const oy = itemY + shapeSize * Math.sin(angle);
+                        if (i === 0) this.ctx.moveTo(ox, oy);
+                        else this.ctx.lineTo(ox, oy);
+                    }
+                    this.ctx.closePath();
+                }
+
+                this.ctx.fill();
+
+                // Draw label
+                this.ctx.fillStyle = textColor;
+                this.ctx.fillText(item.label, textX, itemY);
+            });
+
+            this.ctx.restore();
+        }
+
     // Main draw function
         draw() {
             this.ctx.clearRect(0, 0, this.width, this.height);
@@ -882,6 +983,9 @@ document.addEventListener('DOMContentLoaded', function() {
             this.nodes.forEach(node => {
                 this.drawNode(node);
         });
+
+            // Draw legend
+            this.drawLegend();
 
             // Update node visibilities
             this.updateNodeVisibilities();
