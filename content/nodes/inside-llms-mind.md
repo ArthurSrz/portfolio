@@ -14,7 +14,7 @@ draft: false
 # Check the code of the app
 
 
-![insideLLMs mind.png](/images/insideLLMs mind.png)
+![Inside LLMs Mind](/images/insidellms-mind.png)
 
 <div class="container">  
   <div class="center">  

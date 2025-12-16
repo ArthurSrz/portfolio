@@ -1,0 +1,145 @@
+{
+  "nodes": [
+    {
+      "id": "Person",
+      "labels": ["Person"],
+      "properties": {
+        "name": "STRING",
+        "title": "STRING",
+        "summary": "STRING",
+        "id": "STRING | KEY"
+      },
+      "style": {"color": "#4299e1"},
+      "position": {"x": 0, "y": 0},
+      "caption": "Arthur Sarazin"
+    },
+    {
+      "id": "Experience",
+      "labels": ["Experience"],
+      "properties": {
+        "title": "STRING",
+        "startDate": "DATE",
+        "endDate": "DATE",
+        "id": "STRING | KEY"
+      },
+      "style": {"color": "#68d391"},
+      "position": {"x": 200, "y": 0},
+      "caption": ""
+    },
+    {
+      "id": "Employer",
+      "labels": ["Employer"],
+      "properties": {
+        "name": "STRING",
+        "industry": "STRING",
+        "id": "STRING | KEY"
+      },
+      "style": {"color": "#9f7aea"},
+      "position": {"x": 400, "y": 0},
+      "caption": ""
+    },
+    {
+      "id": "Prototype",
+      "labels": ["Prototype"],
+      "properties": {
+        "name": "STRING",
+        "status": "STRING",
+        "category": "STRING",
+        "id": "STRING | KEY"
+      },
+      "style": {"color": "#f687b3"},
+      "position": {"x": 600, "y": 0},
+      "caption": ""
+    },
+    {
+      "id": "Component",
+      "labels": ["Component"],
+      "properties": {
+        "name": "STRING",
+        "layer": "STRING",
+        "id": "STRING | KEY"
+      },
+      "style": {"color": "#f6ad55"},
+      "position": {"x": 800, "y": -200},
+      "caption": ""
+    },
+    {
+      "id": "Skill",
+      "labels": ["Skill"],
+      "properties": {
+        "name": "STRING",
+        "category": "STRING",
+        "id": "STRING | KEY"
+      },
+      "style": {"color": "#38b2ac"},
+      "position": {"x": 0, "y": -200},
+      "caption": ""
+    },
+    {
+      "id": "Technology",
+      "labels": ["Technology"],
+      "properties": {
+        "name": "STRING",
+        "type": "STRING",
+        "id": "STRING | KEY"
+      },
+      "style": {"color": "#48bb78"},
+      "position": {"x": 200, "y": -200},
+      "caption": ""
+    },
+    {
+      "id": "Education",
+      "labels": ["Education"],
+      "properties": {
+        "degree": "STRING",
+        "field": "STRING",
+        "id": "STRING | KEY"
+      },
+      "style": {"color": "#805ad5"},
+      "position": {"x": 400, "y": -200},
+      "caption": ""
+    },
+    {
+      "id": "ResearchTheme",
+      "labels": ["ResearchTheme"],
+      "properties": {
+        "name": "STRING",
+        "id": "STRING | KEY"
+      },
+      "style": {"color": "#ed8936"},
+      "position": {"x": 600, "y": -200},
+      "caption": ""
+    },
+    {
+      "id": "Publication",
+      "labels": ["Publication"],
+      "properties": {
+        "title": "STRING",
+        "year": "INTEGER",
+        "id": "STRING | KEY"
+      },
+      "style": {"color": "#e53e3e"},
+      "position": {"x": 800, "y": -400},
+      "caption": ""
+    }
+  ],
+  "relationships": [
+    {"fromId": "Person", "toId": "Experience", "type": "HAS_EXPERIENCE", "properties": {}, "style": {}},
+    {"fromId": "Experience", "toId": "Employer", "type": "EMPLOYED_AT", "properties": {}, "style": {}},
+    {"fromId": "Person", "toId": "Prototype", "type": "BUILT", "properties": {}, "style": {}},
+    {"fromId": "Prototype", "toId": "Experience", "type": "BUILT_DURING", "properties": {}, "style": {}},
+    {"fromId": "Prototype", "toId": "Employer", "type": "BUILT_FOR", "properties": {}, "style": {}},
+    {"fromId": "Prototype", "toId": "Component", "type": "MADE_OF", "properties": {}, "style": {}},
+    {"fromId": "Prototype", "toId": "Technology", "type": "USES_TECHNOLOGY", "properties": {}, "style": {}},
+    {"fromId": "Experience", "toId": "Skill", "type": "REQUIRES_SKILL", "properties": {}, "style": {}},
+    {"fromId": "Prototype", "toId": "Skill", "type": "DEMONSTRATES_SKILL", "properties": {}, "style": {}},
+    {"fromId": "Person", "toId": "Education", "type": "HAS_EDUCATION", "properties": {}, "style": {}},
+    {"fromId": "Education", "toId": "Employer", "type": "EDUCATED_AT", "properties": {}, "style": {}},
+    {"fromId": "Prototype", "toId": "ResearchTheme", "type": "EXPLORES_THEME", "properties": {}, "style": {}},
+    {"fromId": "Person", "toId": "Publication", "type": "PUBLISHED", "properties": {}, "style": {}},
+    {"fromId": "Publication", "toId": "ResearchTheme", "type": "ADDRESSES_THEME", "properties": {}, "style": {}},
+    {"fromId": "Prototype", "toId": "Prototype", "type": "DERIVED_FROM", "properties": {}, "style": {}},
+    {"fromId": "Skill", "toId": "Technology", "type": "RELATED_TO", "properties": {}, "style": {}}
+  ],
+  "style": {}
+}

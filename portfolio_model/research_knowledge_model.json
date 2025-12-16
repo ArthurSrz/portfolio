@@ -1,0 +1,89 @@
+{
+  "metadata": {
+    "name": "Research-Centric Knowledge Graph Model",
+    "version": "1.0.0",
+    "created": "2025-12-16",
+    "description": "Model for research interpretability and Design Science approach"
+  },
+  "nodes": [
+    {
+      "label": "Concept",
+      "key_property": {"name": "id", "type": "STRING"},
+      "properties": [
+        {"name": "name", "type": "STRING"},
+        {"name": "definition", "type": "STRING"},
+        {"name": "domain", "type": "STRING", "description": "interpretability|HDI|open-data|LLM"}
+      ],
+      "description": "Core concepts in research"
+    },
+    {
+      "label": "Artifact",
+      "key_property": {"name": "id", "type": "STRING"},
+      "properties": [
+        {"name": "name", "type": "STRING"},
+        {"name": "type", "type": "STRING", "description": "prototype|method|framework|course"},
+        {"name": "maturity", "type": "STRING"}
+      ],
+      "description": "Things built"
+    },
+    {
+      "label": "Theory",
+      "key_property": {"name": "id", "type": "STRING"},
+      "properties": [
+        {"name": "name", "type": "STRING"},
+        {"name": "source", "type": "STRING"},
+        {"name": "field", "type": "STRING"}
+      ],
+      "description": "Scientific theories applied"
+    },
+    {
+      "label": "Problem",
+      "key_property": {"name": "id", "type": "STRING"},
+      "properties": [
+        {"name": "name", "type": "STRING"},
+        {"name": "description", "type": "STRING"},
+        {"name": "domain", "type": "STRING"}
+      ],
+      "description": "Problems artifacts solve"
+    },
+    {
+      "label": "TextChunk",
+      "key_property": {"name": "id", "type": "STRING"},
+      "properties": [
+        {"name": "content", "type": "STRING"},
+        {"name": "source", "type": "STRING"},
+        {"name": "page", "type": "INTEGER"}
+      ],
+      "description": "For RAG interpretability - text chunks from documents"
+    },
+    {
+      "label": "Embedding",
+      "key_property": {"name": "id", "type": "STRING"},
+      "properties": [
+        {"name": "vector", "type": "LIST"},
+        {"name": "model", "type": "STRING"}
+      ],
+      "description": "Vector embeddings for semantic search"
+    },
+    {
+      "label": "RAGResponse",
+      "key_property": {"name": "id", "type": "STRING"},
+      "properties": [
+        {"name": "query", "type": "STRING"},
+        {"name": "response", "type": "STRING"},
+        {"name": "timestamp", "type": "DATETIME"}
+      ],
+      "description": "RAG system responses for interpretability tracking"
+    }
+  ],
+  "relationships": [
+    {"type": "APPLIES_THEORY", "start_node_label": "Artifact", "end_node_label": "Theory", "description": "Artifact applies this scientific theory"},
+    {"type": "SOLVES", "start_node_label": "Artifact", "end_node_label": "Problem", "description": "Artifact solves this problem"},
+    {"type": "OPERATIONALIZES", "start_node_label": "Artifact", "end_node_label": "Concept", "description": "Artifact operationalizes this concept"},
+    {"type": "INFORMED_BY", "start_node_label": "Concept", "end_node_label": "Theory", "description": "Concept is informed by theory"},
+    {"type": "ADDRESSES", "start_node_label": "Problem", "end_node_label": "Concept", "description": "Problem relates to concept"},
+    {"type": "HAS_EMBEDDING", "start_node_label": "TextChunk", "end_node_label": "Embedding", "description": "Chunk has this embedding"},
+    {"type": "RETRIEVED_FROM", "start_node_label": "RAGResponse", "end_node_label": "TextChunk", "properties": [{"name": "rank", "type": "INTEGER"}, {"name": "score", "type": "FLOAT"}], "description": "Response retrieved from these chunks"},
+    {"type": "GROUNDED_IN", "start_node_label": "RAGResponse", "end_node_label": "Concept", "description": "Response grounded in these concepts"}
+  ]
+}

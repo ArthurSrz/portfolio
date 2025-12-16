@@ -1,0 +1,141 @@
+{
+  "metadata": {
+    "name": "Arthur Sarazin Portfolio Graph Model",
+    "version": "1.0.0",
+    "created": "2025-12-16",
+    "description": "Enhanced portfolio graph model with Skills, Technologies, and Research Themes"
+  },
+  "nodes": [
+    {
+      "label": "Person",
+      "key_property": {"name": "id", "type": "STRING"},
+      "properties": [
+        {"name": "name", "type": "STRING", "description": "Full name"},
+        {"name": "title", "type": "STRING", "description": "Professional title"},
+        {"name": "summary", "type": "STRING", "description": "Bio summary"}
+      ],
+      "description": "Core entity - the portfolio owner"
+    },
+    {
+      "label": "Experience",
+      "key_property": {"name": "id", "type": "STRING"},
+      "properties": [
+        {"name": "title", "type": "STRING", "description": "Role title"},
+        {"name": "startDate", "type": "DATE", "description": "Start date"},
+        {"name": "endDate", "type": "DATE", "description": "End date or null if current"},
+        {"name": "description", "type": "STRING", "description": "Role description"},
+        {"name": "achievements", "type": "LIST", "description": "Key achievements"}
+      ],
+      "description": "Professional roles and positions"
+    },
+    {
+      "label": "Employer",
+      "key_property": {"name": "id", "type": "STRING"},
+      "properties": [
+        {"name": "name", "type": "STRING"},
+        {"name": "industry", "type": "STRING"},
+        {"name": "url", "type": "STRING"},
+        {"name": "description", "type": "STRING"}
+      ],
+      "description": "Organizations worked with"
+    },
+    {
+      "label": "Prototype",
+      "key_property": {"name": "id", "type": "STRING"},
+      "properties": [
+        {"name": "name", "type": "STRING"},
+        {"name": "status", "type": "STRING", "description": "done|in_progress|brainstorm|beta-test"},
+        {"name": "category", "type": "STRING", "description": "application|framework|method|research|course"},
+        {"name": "startYear", "type": "INTEGER"},
+        {"name": "endYear", "type": "INTEGER"},
+        {"name": "designRationale", "type": "STRING"},
+        {"name": "githubUrl", "type": "STRING"},
+        {"name": "demoUrl", "type": "STRING"}
+      ],
+      "description": "Data products, tools, frameworks built"
+    },
+    {
+      "label": "Component",
+      "key_property": {"name": "id", "type": "STRING"},
+      "properties": [
+        {"name": "name", "type": "STRING"},
+        {"name": "layer", "type": "STRING", "description": "Architecture layer: data|logic|interface"},
+        {"name": "description", "type": "STRING"}
+      ],
+      "description": "Sub-components of prototypes (architecture breakdown)"
+    },
+    {
+      "label": "Skill",
+      "key_property": {"name": "id", "type": "STRING"},
+      "properties": [
+        {"name": "name", "type": "STRING"},
+        {"name": "category", "type": "STRING", "description": "technical|methodological|soft"},
+        {"name": "proficiencyLevel", "type": "STRING", "description": "expert|advanced|intermediate"}
+      ],
+      "description": "Skills and competencies"
+    },
+    {
+      "label": "Technology",
+      "key_property": {"name": "id", "type": "STRING"},
+      "properties": [
+        {"name": "name", "type": "STRING"},
+        {"name": "type", "type": "STRING", "description": "language|framework|database|platform|tool"},
+        {"name": "ecosystem", "type": "STRING", "description": "python|javascript|data|cloud"}
+      ],
+      "description": "Technologies and tools in tech stack"
+    },
+    {
+      "label": "Education",
+      "key_property": {"name": "id", "type": "STRING"},
+      "properties": [
+        {"name": "degree", "type": "STRING"},
+        {"name": "field", "type": "STRING"},
+        {"name": "institution", "type": "STRING"},
+        {"name": "startYear", "type": "INTEGER"},
+        {"name": "endYear", "type": "INTEGER"},
+        {"name": "dissertationTitle", "type": "STRING"}
+      ],
+      "description": "Academic credentials"
+    },
+    {
+      "label": "ResearchTheme",
+      "key_property": {"name": "id", "type": "STRING"},
+      "properties": [
+        {"name": "name", "type": "STRING"},
+        {"name": "description", "type": "STRING"},
+        {"name": "keywords", "type": "LIST"}
+      ],
+      "description": "Research themes connecting prototypes and publications"
+    },
+    {
+      "label": "Publication",
+      "key_property": {"name": "id", "type": "STRING"},
+      "properties": [
+        {"name": "title", "type": "STRING"},
+        {"name": "type", "type": "STRING", "description": "paper|thesis|article"},
+        {"name": "year", "type": "INTEGER"},
+        {"name": "url", "type": "STRING"},
+        {"name": "abstract", "type": "STRING"}
+      ],
+      "description": "Research publications and papers"
+    }
+  ],
+  "relationships": [
+    {"type": "HAS_EXPERIENCE", "start_node_label": "Person", "end_node_label": "Experience", "description": "Person has professional experience"},
+    {"type": "EMPLOYED_AT", "start_node_label": "Experience", "end_node_label": "Employer", "properties": [{"name": "contractType", "type": "STRING", "description": "employee|freelance|cofounder"}], "description": "Experience was at this employer"},
+    {"type": "BUILT", "start_node_label": "Person", "end_node_label": "Prototype", "description": "Person built this prototype"},
+    {"type": "BUILT_DURING", "start_node_label": "Prototype", "end_node_label": "Experience", "description": "Prototype was built during this experience"},
+    {"type": "BUILT_FOR", "start_node_label": "Prototype", "end_node_label": "Employer", "description": "Prototype was built for this employer"},
+    {"type": "MADE_OF", "start_node_label": "Prototype", "end_node_label": "Component", "properties": [{"name": "layer", "type": "STRING", "description": "Architecture layer"}], "description": "Prototype is made of these components"},
+    {"type": "USES_TECHNOLOGY", "start_node_label": "Prototype", "end_node_label": "Technology", "properties": [{"name": "purpose", "type": "STRING", "description": "What the tech is used for"}], "description": "Prototype uses this technology"},
+    {"type": "REQUIRES_SKILL", "start_node_label": "Experience", "end_node_label": "Skill", "description": "Experience requires this skill"},
+    {"type": "DEMONSTRATES_SKILL", "start_node_label": "Prototype", "end_node_label": "Skill", "description": "Prototype demonstrates this skill"},
+    {"type": "HAS_EDUCATION", "start_node_label": "Person", "end_node_label": "Education", "description": "Person has this education"},
+    {"type": "EDUCATED_AT", "start_node_label": "Education", "end_node_label": "Employer", "description": "Education was at this institution"},
+    {"type": "EXPLORES_THEME", "start_node_label": "Prototype", "end_node_label": "ResearchTheme", "description": "Prototype explores this research theme"},
+    {"type": "PUBLISHED", "start_node_label": "Person", "end_node_label": "Publication", "description": "Person published this work"},
+    {"type": "ADDRESSES_THEME", "start_node_label": "Publication", "end_node_label": "ResearchTheme", "description": "Publication addresses this theme"},
+    {"type": "DERIVED_FROM", "start_node_label": "Prototype", "end_node_label": "Prototype", "description": "Prototype derives from or extends another prototype"},
+    {"type": "RELATED_TO", "start_node_label": "Skill", "end_node_label": "Technology", "description": "Skill is related to this technology"}
+  ]
+}

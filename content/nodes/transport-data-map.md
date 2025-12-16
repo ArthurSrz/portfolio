@@ -29,7 +29,7 @@ This is where the Transport Data Map comes in.
 
 An map-based app assessing the transport data availability of every part of a transportation network and giving info about the data producers to contact if corrective measures need to be taken :
 
-![Urban District Planner.png](/images/Urban District Planner.png)
+![Transport Data Map](/images/urban-district-planner.png)
 
 
 # Function blocks 
