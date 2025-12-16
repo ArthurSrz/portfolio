@@ -1,6 +1,6 @@
 baseURL = "https://arthursrz.github.io/portfolio/"
 languageCode = "en-us"
-title = "Arthur Sarazin - Data Product Portfolio"
+title = "Arthur Sarazin - Portfolio"
 theme = "hugo-constellation"
 
 [params]
