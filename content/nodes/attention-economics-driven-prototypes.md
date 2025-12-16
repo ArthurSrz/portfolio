@@ -12,3 +12,5 @@ draft: false
 ---
 
 # Design rationale
+
+Prototypes applying attention economics principles to optimize how users interact with data and information systems.

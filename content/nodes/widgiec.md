@@ -10,3 +10,5 @@ connectionType: "solid"
 weight: 10
 draft: false
 ---
+
+A widget concept for displaying climate data (GIEC/IPCC reports) in accessible, embeddable formats for web applications.

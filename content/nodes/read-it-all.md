@@ -10,3 +10,5 @@ connectionType: "solid"
 weight: 10
 draft: false
 ---
+
+A curated reading list aggregator designed to help researchers and practitioners navigate complex literature landscapes.
