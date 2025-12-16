@@ -4,27 +4,46 @@ type: "nodes"
 id: "data-redesign-method"
 shape: "diamond"
 parent: "prototypes"
-subtitle: "2023-present | beta-test | method"
-connectionLabel: "Datactivist"
+subtitle: "2023-present | method"
 connectionType: "solid"
-weight: 10
+weight: 11
 draft: false
+connections:
+  - target: "theme-interpretability"
+    label: "EXPLORES"
+  - target: "theme-open-data"
+    label: "EXPLORES"
+  - target: "datactivist"
+    label: "BUILT_FOR"
+  - target: "skill-design-science"
+    label: "REQUIRES"
+  - target: "design-science-researcher"
+    label: "BUILT_DURING"
 ---
 
-# Get access to the method 
+# A Method for Reducing Dataset Complexity
 
-![dataredesign_method.png](/images/dataredesign_method.png)
-<div class="container">  
-  <div class="center">  
-    <button style="color: #778ee7;" onclick="window.open('https://github.com/datactivist/data_redesign_method', '_blank');">Here</button>  
-  </div>  
-</div>
+A practical method for transforming complex datasets into intuitive ones that adapt to users' data literacy levels.
 
+[GitHub](https://github.com/datactivist/data_redesign_method)
 
-# Design rationale
+![Data Redesign Method](/images/dataredesign_method.png)
 
-#### Why a method to redesign datasets ? 
+## Why Redesign Datasets?
 
-Their is a very diverse range of data users whose data literacy and needs differ greatly considering data : some will only look for one information in the dataset while other will use data as a core artifact of a data product they are making. 
+There is a very diverse range of data users whose data literacy and needs differ greatly:
+- Some only look for **one piece of information** in the dataset
+- Others use data as a **core artifact** of a data product they are making
 
-Yet, these diverse needs and data literacy have not been considered by open data producers while designing datasets. This method will support the open data communities in their effort to design new open data sets or redesign existing ones whose reuse can address societal issues such as global warming, health and public transparency among others.
+Yet, these diverse needs have not been considered by open data producers while designing datasets.
+
+## The Method
+
+This method supports open data communities in their effort to:
+- **Design new datasets** with interpretability in mind
+- **Redesign existing ones** to improve reusability
+- **Address societal issues** (climate, health, transparency) through better data
+
+## Research Foundation
+
+The Data Redesign Method is the practical application of the scientific research documented in the [Intuitiveness](https://github.com/ArthurSrz/intuitiveness) project, which establishes the theoretical framework for dataset complexity reduction.
