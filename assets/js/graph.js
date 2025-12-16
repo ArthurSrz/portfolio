@@ -945,9 +945,9 @@ document.addEventListener('DOMContentLoaded', function() {
             return this.settlementMap[node.id] >= settlementFramesRequired;
     }
 
-    // Begin staged transition process
+    // Begin staged transition process - USER CONTROLLED, no automatic expansion
         beginStagedTransition() {
-            this.transitionState = 'centerNode';
+            this.transitionState = 'complete'; // Skip automatic transitions
             this.transitionStartTime = Date.now();
 
             // Determine the initial center node based on URL navigation
@@ -958,25 +958,28 @@ document.addEventListener('DOMContentLoaded', function() {
             if (this.initialCenterNode && this.initialCenterNode.id !== personNode.id) {
                 console.log('Using URL-specified node as center for transitions:', this.initialCenterNode.id);
                 centerNode = this.initialCenterNode;
-
-                // Make sure both the URL-specified node and person node are visible
-                personNode.targetVisibility = 1;
             }
 
-            // Make the center node visible
-        centerNode.targetVisibility = 1;
+            // ONLY show center node and its DIRECT children (first level only)
+            const firstLevelNodeIds = this.links
+                .filter(link => link.source.id === centerNode.id || link.target.id === centerNode.id)
+                .map(link => link.source.id === centerNode.id ? link.target.id : link.source.id);
 
-        // All other nodes should be invisible at first
-            this.nodes.filter(n => n.id !== centerNode.id && n.id !== personNode.id).forEach(n => {
-            n.targetVisibility = 0;
-        });
+            // Make center node visible
+            centerNode.targetVisibility = 1;
+
+            // Make first level nodes visible
+            this.nodes.forEach(n => {
+                if (n.id === centerNode.id || firstLevelNodeIds.includes(n.id)) {
+                    n.targetVisibility = 1;
+                } else {
+                    n.targetVisibility = 0;
+                }
+            });
 
             this.loadingEl.style.display = 'none';
 
-            // Give the center node a moment to appear, then move to first level
-            setTimeout(() => {
-                this.progressTransition();
-            }, this.config.initialNodeDelay);
+            // NO automatic progression - user must click to explore
     }
 
     // Progress to the next transition stage
@@ -1463,7 +1466,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Center the graph on a specific node with smooth transitions
+    // Center the graph on a specific node - ONLY show direct connections (level 1)
         centerOnNode(node) {
         if (!node) return;
 
@@ -1472,95 +1475,36 @@ document.addEventListener('DOMContentLoaded', function() {
             const nodesToAddSectionsFor = [];
             const personNode = this.nodes.find(n => n.type === 'person');
             const personNodeId = personNode ? personNode.id : null;
-            const initialCenterNodeId = this.initialCenterNode ? this.initialCenterNode.id : null;
 
-        // Special case for the center/person node - only show direct connections by default
-        const isPerson = node.type === 'person';
-
-            if (isPerson && !this.zoomedOut) {
-            // For person node, make both level 1 and level 2 nodes visible by default
+            if (this.zoomedOut) {
+                // In zoomed out mode, show all nodes
                 this.nodes.forEach(n => {
-                // Show the person node and nodes up to 2 connections away
-                const distance = nodeDistances.get(n.id);
-                    if (n.id === node.id || distance === 1 || distance === 2 || n.id === initialCenterNodeId) {
                     n.targetVisibility = 1;
-                        visibleNodeIds.push(n.id);
-
-                        if (this.visibilityMap[n.id] >= 0.5 && n.id !== node.id) {
-                            nodesToAddSectionsFor.push(n);
-                        }
-                } else {
-                    n.targetVisibility = 0;
-                }
-            });
-
-                const nodesToShow = this.nodes
-                .filter(n => {
-                    const distance = nodeDistances.get(n.id);
-                        return (distance === 1 || distance === 2 || n.id === initialCenterNodeId) && (this.visibilityMap[n.id] || 0) < 0.5;
-                })
-                .map(n => n.id);
-
-            if (nodesToShow.length > 0) {
-                this.queueNodesForVisibility(nodesToShow);
-            }
-        }
-            else if (this.zoomedOut) {
-            // In zoomed out mode, show all nodes
-                this.nodes.forEach(n => {
-                n.targetVisibility = 1;
                     visibleNodeIds.push(n.id);
-
                     if (this.visibilityMap[n.id] >= 0.5 && n.id !== node.id) {
                         nodesToAddSectionsFor.push(n);
                     }
-            });
-
-                const nonVisibleNodeIds = this.nodes
-                    .filter(n => (this.visibilityMap[n.id] || 0) < 0.5 && n.id !== node.id)
-                .map(n => n.id);
-
-            if (nonVisibleNodeIds.length > 0) {
-                    this.queueNodesForVisibility(nonVisibleNodeIds);
-            }
-        }
-        else {
+                });
+            } else {
+                // DEFAULT: Only show DIRECT connections (level 1 only)
                 this.nodes.forEach(n => {
                     const distance = nodeDistances.get(n.id);
-                    console.log("distance for", n.id, distance);
-                    if (distance === undefined || (distance > 2 && n.id !== personNodeId && n.id !== initialCenterNodeId)) {
-                        console.log("0 visibility for", n.id);
-                        n.targetVisibility = 0;
-                } else {
-                    console.log("1 visibility for", n.id);
+                    // Only show: current node, direct connections (distance=1), person node
+                    if (n.id === node.id || distance === 1 || n.id === personNodeId) {
                         n.targetVisibility = 1;
                         visibleNodeIds.push(n.id);
-
                         if (this.visibilityMap[n.id] >= 0.5 && n.id !== node.id) {
                             nodesToAddSectionsFor.push(n);
                         }
+                    } else {
+                        n.targetVisibility = 0;
                     }
                 });
-
-                // Always ensure the person node is visible even when not connected to current node
-                if (personNode && !nodeDistances.has(personNodeId)) {
-                    personNode.targetVisibility = 1;
-                    visibleNodeIds.push(personNodeId);
-                }
-
-                // Always ensure the initialCenterNode is visible if it exists
-                console.log("initialCenterNodeId", initialCenterNodeId);
-                if (this.initialCenterNode && !nodeDistances.has(initialCenterNodeId) && initialCenterNodeId !== node.id) {
-                    this.initialCenterNode.targetVisibility = 1;
-                    visibleNodeIds.push(initialCenterNodeId);
-                }
             }
 
-            console.log("visibleNodeIds", visibleNodeIds);
-
             this.removeHiddenNodeSections(visibleNodeIds);
-            nodesToAddSectionsFor.forEach(node => {
-                this.addNodeSectionIfNeeded(node);
+            nodesToAddSectionsFor.forEach(n => {
+                this.addNodeSectionIfNeeded(n);
             });
             this.positionNodesForViewing(node, nodeDistances);
     }
