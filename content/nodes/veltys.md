@@ -4,9 +4,9 @@ type: "nodes"
 id: "veltys"
 shape: "hexagon"
 parent: "employers"
-subtitle: "2024-present"
+subtitle: "2024-2026"
 connectionType: "solid"
-weight: 20
+weight: 10
 draft: false
 ---
 

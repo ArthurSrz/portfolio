@@ -3,7 +3,7 @@ title: "Arthur Sarazin, Ph.D"
 type: "nodes"
 id: "person"
 shape: "circle"
-subtitle: "Design Science Researcher - Senior IT & AI Consultant"
+subtitle: "Forward Deployed AI Engineer"
 connectionType: "solid"
 weight: 1
 draft: false
